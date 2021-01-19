@@ -1,2 +1,2 @@
 # DSL
-Domain Specific Language for financial time series
+Domain-Specific Language (DSL) for financial time series
