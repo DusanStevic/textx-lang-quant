@@ -1,0 +1,25 @@
+
+    digraph textX {
+    fontname = "Bitstream Vera Sans"
+    fontsize = 8
+    node[
+        shape=record,
+        style=filled,
+        fillcolor=aliceblue
+    ]
+    nodesep = 0.3
+    edge[dir=black,arrowtail=empty]
+
+
+50770952[ label="{Query|interval: Interval\l}"]
+
+
+
+match_rules [ shape=plaintext, label=< <table>
+	<tr>
+		<td><b>Interval</b></td><td>1d|1wk|1mo</td>
+	</tr>
+</table> >]
+
+
+}
