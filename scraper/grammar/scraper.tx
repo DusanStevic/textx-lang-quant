@@ -1,0 +1,8 @@
+Query:
+    interval = Interval
+;
+
+Interval:
+    "1d"|"1wk"|"1mo"
+;
+
