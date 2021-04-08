@@ -2,6 +2,9 @@ import time
 import datetime
 import pandas as pd
 from sqlalchemy import create_engine
+from os.path import join, dirname
+from textx import metamodel_from_file
+from textx.export import metamodel_export, model_export
 
 ticker = 'AAPL'
 # from
@@ -20,3 +23,9 @@ con = engine.connect()
 table_name = 'stocks'
 df.to_sql(table_name, con, if_exists='replace', index='False')
 con.close()
+
+
+
+    
+
+    
