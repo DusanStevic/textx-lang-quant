@@ -4,7 +4,7 @@ Query:
 ;
 
 Ticker:
-    symbol=ID
+    ticker=ID
 ;
 
 Interval:
