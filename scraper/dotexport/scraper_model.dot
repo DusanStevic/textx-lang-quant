@@ -11,6 +11,16 @@
     edge[dir=black,arrowtail=empty]
 
 
-55256064[label="{:Query|+interval:str='1d'\l}"]
+49657392 -> 58186720 [label="ticker" arrowtail=diamond dir=both]
+58186720[label="{:Ticker|+symbol:str='AAPL'\l}"]
+49657392 -> 58187168 [label="start" arrowtail=diamond dir=both]
+58187168 -> 58187280 [label="start" arrowtail=diamond dir=both]
+58187280[label="{:Date|+year:str='2020'\l+month:str='12'\l+day:str='01'\l}"]
+58187168[label="{:Start|}"]
+49657392 -> 50450616 [label="end" arrowtail=diamond dir=both]
+50450616 -> 58187336 [label="end" arrowtail=diamond dir=both]
+58187336[label="{:Date|+year:str='2020'\l+month:str='12'\l+day:str='31'\l}"]
+50450616[label="{:End|}"]
+49657392[label="{:Query|+interval:str='1d'\l}"]
 
 }

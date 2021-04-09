@@ -11,11 +11,30 @@
     edge[dir=black,arrowtail=empty]
 
 
-50770952[ label="{Query|interval: Interval\l}"]
+52205576[ label="{Query|interval: Interval\l}"]
+
+52197080[ label="{Ticker|symbol: ID\l}"]
+
+52215960[ label="{Start|}"]
+
+52218792[ label="{End|}"]
+
+52191416[ label="{Date|year: Digit\lmonth: Digit\lday: Digit\l}"]
 
 
 
+52205576 -> 52197080[arrowtail=diamond, dir=both, headlabel="ticker "]
+52205576 -> 52215960[arrowtail=diamond, dir=both, headlabel="start "]
+52205576 -> 52218792[arrowtail=diamond, dir=both, headlabel="end "]
+52215960 -> 52191416[arrowtail=diamond, dir=both, headlabel="start "]
+52218792 -> 52191416[arrowtail=diamond, dir=both, headlabel="end "]
 match_rules [ shape=plaintext, label=< <table>
+	<tr>
+		<td><b>Comment</b></td><td>\/\/.*$</td>
+	</tr>
+	<tr>
+		<td><b>Digit</b></td><td>[0-9]+</td>
+	</tr>
 	<tr>
 		<td><b>Interval</b></td><td>1d|1wk|1mo</td>
 	</tr>

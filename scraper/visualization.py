@@ -1,4 +1,5 @@
 import os
+import pydot
 from os.path import dirname, join
 from textx import metamodel_from_file
 from textx.export import metamodel_export, model_export
@@ -20,12 +21,26 @@ def main(debug=False):
     
     # Optionally export meta-model to dot
     metamodel_export(scraper_metamodel, join(dot_folder, 'scraper_metamodel.dot'))
+    # Optionally export meta-model to png and pdf
+    graphs = pydot.graph_from_dot_file(join(dot_folder, 'scraper_metamodel.dot'))
+    graph = graphs[0]
+    # Optionally export meta-model to png
+    graph.write_png(join(dot_folder, 'scraper_metamodel.png'))
+    # Optionally export meta-model to pdf
+    graph.write_pdf(join(dot_folder, 'scraper_metamodel.pdf'))
 
     # Instantiate model
     scraper_model = scraper_metamodel.model_from_file(join(models_folder, 'query.scrp'))
 
     # Optionally export model to dot
     model_export(scraper_model, join(dot_folder, 'scraper_model.dot'))
+    # Optionally export model to png and pdf
+    graphs = pydot.graph_from_dot_file(join(dot_folder, 'scraper_model.dot'))
+    graph = graphs[0]
+    # Optionally export model to png
+    graph.write_png(join(dot_folder, 'scraper_model.png'))
+    # Optionally export model to pdf
+    graph.write_pdf(join(dot_folder, 'scraper_model.pdf'))
 
 
 if __name__ == '__main__':
