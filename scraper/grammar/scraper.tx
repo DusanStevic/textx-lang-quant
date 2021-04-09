@@ -1,6 +1,12 @@
+/*
+  Scraper DSL grammar.
+*/
+
 Query:
     ticker = Ticker
     interval = Interval
+    start = Start
+    end = End
 ;
 
 Ticker:
@@ -8,6 +14,33 @@ Ticker:
 ;
 
 Interval:
-    "1d"|"1wk"|"1mo"
+    "1d"|"1wk"|"1mo" // Frequency – Daily (1d), Weekly (1wk), Monthly (1mo)
 ;
 
+Start:
+    start = Date
+;
+
+End:
+    end = Date
+;
+
+// The ISO date format  YYYY.MM.DD = YYYY-MM-DD = YYYY/MM/DD
+Date:
+    year = Digit ("."|"-"|"/") month = Digit ("."|"-"|"/") day = Digit 
+;
+ 
+/*
+  Regex match - uses regular expression defined inside / / to match the input.
+  yyyy – four-digit year, e.g. 2006
+  mm – two-digit month, e.g. 04
+  dd – two-digit day of the month, e.g. 02
+*/
+Digit:
+    /[0-9]+/
+;
+
+// Special rule for comments. Comments start with //
+Comment:
+    /\/\/.*$/
+;

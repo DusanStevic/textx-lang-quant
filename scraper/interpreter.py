@@ -13,14 +13,22 @@ models_folder = join(this_folder, 'models')
 scraper_metamodel = metamodel_from_file(join(grammar_folder, 'scraper.tx'), debug=False)
 # Instantiate model
 scraper_model = scraper_metamodel.model_from_file(join(models_folder, 'query.scrp'))
-print(scraper_model.ticker.symbol)
 
 # get ticker symbol from scraper model
 ticker = scraper_model.ticker.symbol
-# from
-period1 = int(time.mktime(datetime.datetime(2020, 12, 1, 23, 59).timetuple())) 
-# to
-period2 = int(time.mktime(datetime.datetime(2020, 12, 31, 23, 59).timetuple())) 
+
+# start date (period1) from scraper model
+period1_year = int(scraper_model.start.start.year)
+period1_month = int(scraper_model.start.start.month)
+period1_day = int(scraper_model.start.start.day)
+period1 = int(time.mktime(datetime.datetime(period1_year, period1_month, period1_day, 23, 59).timetuple())) 
+
+# end date (period2) from scraper model
+period2_year = int(scraper_model.end.end.year)
+period2_month = int(scraper_model.end.end.month)
+period2_day = int(scraper_model.end.end.day)
+period2 = int(time.mktime(datetime.datetime(period2_year, period2_month, period2_day, 23, 59).timetuple())) 
+
 # Frequency – Daily (1d), Weekly (1wk), Monthly (1mo)
 # get interval from scraper model
 interval = scraper_model.interval 
