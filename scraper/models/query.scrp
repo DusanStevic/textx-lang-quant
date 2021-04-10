@@ -1,1 +1,7 @@
-AAPL 1d 2020.12.01 2020.12.31
+query YahooFinance {
+
+    ticker: AAPL
+    interval: 1d
+    start: 2020.12.01
+    end: 2020.12.31
+}
