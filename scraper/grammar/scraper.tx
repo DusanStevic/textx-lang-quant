@@ -3,11 +3,22 @@
 */
 
 Query:
-    ticker = Ticker
-    interval = Interval
-    start = Start
-    end = End
+    query=QueryContent
 ;
+
+QueryContent:
+    'query' name=ID '{'
+        details=QueryDetails
+    '}'
+;
+
+QueryDetails:
+    'ticker' ':' ticker=Ticker
+    'interval' ':' interval=Interval
+    'start' ':' start=Start
+    'end' ':' end=End   
+;
+
 
 Ticker:
     symbol=ID
