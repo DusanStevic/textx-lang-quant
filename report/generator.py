@@ -4,6 +4,10 @@ import jinja2
 import psycopg2
 from psycopg2 import Error
 import copy
+import pdfkit
+import os
+# Set wkhtmltopdf Path variable
+os.environ["PATH"] += os.pathsep + 'C:/Program Files/wkhtmltopdf/bin'
 
 try:
     # Connect to an existing dsl database
@@ -57,4 +61,6 @@ template = jinja_env.get_template('TabularDetails.j2')
 # Generate report.html file
 with open(join(srcgen_folder, "report.html"), 'w') as f:
     f.write(template.render(columns=columns,rows=rows))
-
+    
+# Generate report.pdf file from report.html file (wkhtmltopdf utility to convert HTML to PDF using Webkit)
+pdfkit.from_file(join(srcgen_folder, "report.html"), join(srcgen_folder, "report.pdf"))
