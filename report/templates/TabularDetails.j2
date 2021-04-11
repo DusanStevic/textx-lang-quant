@@ -1,0 +1,23 @@
+<style>
+    table,
+    th,
+    td {
+    padding: 10px;
+    border: 1px solid black;
+    border-collapse: collapse;
+    }
+</style>
+<table>
+  <tr>
+    {% for cell in columns %}
+      <td><b>{{ cell }}</b></td>
+    {% endfor %}
+  </tr>
+  {% for row in rows %}
+    <tr>
+      {% for cell in row %}
+        <td>{{ cell }}</td>
+      {% endfor %}
+    </tr>
+  {% endfor %} 
+</table>
