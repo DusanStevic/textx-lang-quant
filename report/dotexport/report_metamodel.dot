@@ -1,0 +1,34 @@
+
+    digraph textX {
+    fontname = "Bitstream Vera Sans"
+    fontsize = 8
+    node[
+        shape=record,
+        style=filled,
+        fillcolor=aliceblue
+    ]
+    nodesep = 0.3
+    edge[dir=black,arrowtail=empty]
+
+
+52188504[ label="{Report|}"]
+
+52180008[ label="{ReportContent|name: ID\l}"]
+
+52171512[ label="{ReportDetails|name: ID\ltopic: STRING\lcreator: STRING\lcreation_date: STRING\lsummary: STRING\l}"]
+
+52191336[ label="{Field|field: ID\lvalue: BASETYPE\l}"]
+
+
+
+52188504 -> 52180008[arrowtail=diamond, dir=both, headlabel="report "]
+52180008 -> 52171512[arrowtail=diamond, dir=both, headlabel="details 1..*"]
+52171512 -> 52191336[arrowtail=diamond, dir=both, headlabel="fields 0..*"]
+match_rules [ shape=plaintext, label=< <table>
+	<tr>
+		<td><b>Comment</b></td><td>\/\/.*$</td>
+	</tr>
+</table> >]
+
+
+}
