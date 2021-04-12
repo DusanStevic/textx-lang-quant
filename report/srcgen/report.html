@@ -216,4 +216,37 @@
         <td>99116600</td>
     </tr>
  
-</table>
+</table><!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.0/chart.js"> </script>
+</head>
+
+<body>
+    <h2>Yahoo Finance Charts</h2>
+
+    <p>Yahoo Finance Charts over time.</p>
+    <div>
+	    <canvas id="line-chart" class="chartsjs" width="3" height="1" style="display:block; width:800, height:450"></canvas>
+	</div>
+
+	<script>
+	labels = JSON.parse("[\"2020-12-01\", \"2020-12-02\", \"2020-12-03\", \"2020-12-04\", \"2020-12-07\", \"2020-12-08\", \"2020-12-09\", \"2020-12-10\", \"2020-12-11\", \"2020-12-14\", \"2020-12-15\", \"2020-12-16\", \"2020-12-17\", \"2020-12-18\", \"2020-12-21\", \"2020-12-22\", \"2020-12-23\", \"2020-12-24\", \"2020-12-28\", \"2020-12-29\", \"2020-12-30\", \"2020-12-31\"]")
+	data = JSON.parse("[122.720001, 123.080002, 122.940002, 122.25, 123.75, 124.379997, 121.779999, 123.239998, 122.410004, 121.779999, 127.879997, 127.809998, 128.699997, 126.660004, 128.229996, 131.880005, 130.960007, 131.970001, 136.690002, 134.869995, 133.720001, 132.690002]")
+	new Chart(document.getElementById("line-chart"),{
+		"type":"line",
+		"data":
+			{"labels":labels,
+			"datasets":[{"label":"Closing price Over Time",
+			"data":	data,
+			"fill":true,
+			"borderColor":"rgb(75, 192, 192)",
+			"lineTension":0.1}]},
+		"options":{}});
+
+
+    	</script>
+
+
+</body>
