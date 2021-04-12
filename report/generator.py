@@ -1,3 +1,5 @@
+import json
+import pandas as pd
 from os import mkdir
 from os.path import exists, dirname, join
 import jinja2
@@ -35,6 +37,9 @@ try:
             row_temp.append(cell)
         rows.append(copy.deepcopy(row_temp))
         row_temp.clear()
+    # Use the pandas read_sql_query function to read 
+    # the results of a SQL query directly into a pandas DataFrame
+    df = pd.read_sql_query("SELECT * FROM stocks", connection)
         
 
 except (Exception, Error) as error:
@@ -57,10 +62,20 @@ jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(templates_folder),
 
 # Load template
 template = jinja_env.get_template('TabularDetails.j2')
+template1 = jinja_env.get_template('GraphicalDetails.j2')
+#data = json.dumps( [1.0,2.0,3.0] )
+data = json.dumps(df["Close"].tolist())
+#labels=json.dumps( ["18-12-31", "19-01-01", "19-01-02"] )
+labels=json.dumps(df["Date"].tolist())
+topic = "Yahoo Finance Charts"
+
 
 # Generate report.html file
 with open(join(srcgen_folder, "report.html"), 'w') as f:
     f.write(template.render(columns=columns,rows=rows))
+    f.write(template1.render(data=data, labels=labels, topic=topic))
     
 # Generate report.pdf file from report.html file (wkhtmltopdf utility to convert HTML to PDF using Webkit)
 pdfkit.from_file(join(srcgen_folder, "report.html"), join(srcgen_folder, "report.pdf"))
+
+
