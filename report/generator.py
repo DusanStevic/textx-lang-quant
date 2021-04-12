@@ -78,4 +78,4 @@ with open(join(srcgen_folder, "report.html"), 'w') as f:
 # Generate report.pdf file from report.html file (wkhtmltopdf utility to convert HTML to PDF using Webkit)
 pdfkit.from_file(join(srcgen_folder, "report.html"), join(srcgen_folder, "report.pdf"))
 
-
+print(df)

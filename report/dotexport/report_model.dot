@@ -1,0 +1,32 @@
+
+    digraph textX {
+    fontname = "Bitstream Vera Sans"
+    fontsize = 8
+    node[
+        shape=record,
+        style=filled,
+        fillcolor=aliceblue
+    ]
+    nodesep = 0.3
+    edge[dir=black,arrowtail=empty]
+
+
+57727184 -> 57661256 [label="report" arrowtail=diamond dir=both]
+57661256 -> 57883112 [label="details:0" arrowtail=diamond dir=both]
+57883112 -> 57883504 [label="fields:0" arrowtail=diamond dir=both]
+57883504[label="{:Field|+field:str='border'\l+value:bool=True\l}"]
+57883112 -> 57872456 [label="fields:1" arrowtail=diamond dir=both]
+57872456[label="{:Field|+field:str='float'\l+value:float=14.23\l}"]
+57883112 -> 57883560 [label="fields:2" arrowtail=diamond dir=both]
+57883560[label="{:Field|+field:str='int'\l+value:int=11\l}"]
+57883112 -> 57883616 [label="fields:3" arrowtail=diamond dir=both]
+57883616[label="{:Field|+field:str='id'\l+value:str='a1b2'\l}"]
+57883112[label="{tabular:ReportDetails|+topic:str='tabular part of repo...'\l+creator:str='Dazzle Novak'\l+creation_date:str='12/4/2021'\l+summary:str=''\l}"]
+57661256 -> 57883392 [label="details:1" arrowtail=diamond dir=both]
+57883392 -> 57883672 [label="fields:0" arrowtail=diamond dir=both]
+57883672[label="{:Field|+field:str='time_series'\l+value:str='Close'\l}"]
+57883392[label="{graphical:ReportDetails|+topic:str='graphical part of re...'\l+creator:str='Rad Cunningham'\l+creation_date:str='12/4/2021'\l+summary:str='this is graphical pa...'\l}"]
+57661256[label="{YahooFinance:ReportContent|}"]
+57727184[label="{:Report|}"]
+
+}
