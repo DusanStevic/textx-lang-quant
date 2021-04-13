@@ -2,10 +2,10 @@ report YahooFinance {
 
 
 
-    Report Details: tabular {
+    tabular tab1 {
         topic: "tabular part of report"
         creator: "Dazzle Novak"
-        creation_date: "12/4/2021"
+        creation_date: true
         border: true
         float: 14.23
         int: 11
@@ -13,12 +13,13 @@ report YahooFinance {
 
     }
 
-    Report Details: graphical {
+    graphical graph1 {
         topic: "graphical part of report"
         creator: "Rad Cunningham"
-        creation_date: "12/4/2021"
+        creation_date: true
         summary: "this is graphical part"
-        time_series: "Close"
+        // 
+        time_series: "Adj Close"
 
     }
 

@@ -15,18 +15,21 @@
 
 52180008[ label="{ReportContent|name: ID\l}"]
 
-52171512[ label="{ReportDetails|name: ID\ltopic: STRING\lcreator: STRING\lcreation_date: STRING\lsummary: STRING\l}"]
+52171512[ label="{ReportDetails|report_details_type: ReportDetailsType\lname: ID\ltopic: STRING\lcreator: STRING\lcreation_date: BOOL\lsummary: STRING\l}"]
 
-52191336[ label="{Field|field: ID\lvalue: BASETYPE\l}"]
+52197944[ label="{Field|field: ID\lvalue: BASETYPE\l}"]
 
 
 
 52188504 -> 52180008[arrowtail=diamond, dir=both, headlabel="report "]
 52180008 -> 52171512[arrowtail=diamond, dir=both, headlabel="details 1..*"]
-52171512 -> 52191336[arrowtail=diamond, dir=both, headlabel="fields 0..*"]
+52171512 -> 52197944[arrowtail=diamond, dir=both, headlabel="fields 0..*"]
 match_rules [ shape=plaintext, label=< <table>
 	<tr>
 		<td><b>Comment</b></td><td>\/\/.*$</td>
+	</tr>
+	<tr>
+		<td><b>ReportDetailsType</b></td><td>general|tabular|graphical</td>
 	</tr>
 </table> >]
 

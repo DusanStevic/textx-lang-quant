@@ -12,17 +12,21 @@ ReportContent:
 ;
 
 ReportDetails:
-    'Report Details:' name=ID '{'
+    report_details_type=ReportDetailsType name=ID '{'
         // mandatory fields for each report detail
         'topic' ':' topic=STRING
         'creator' ':' creator=STRING
-        'creation_date' ':' creation_date=STRING
+        'creation_date' ':' creation_date=BOOL
         // optional fields for each report detail
         ('summary' ':' summary=STRING)?
         // specific fields for each report detail
         fields*=Field
     '}'
 
+;
+
+ReportDetailsType:
+    'general' | 'tabular' | 'graphical' 
 ;
 
 Field:
