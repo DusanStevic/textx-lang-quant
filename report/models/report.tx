@@ -12,7 +12,7 @@ ReportContent:
 ;
 
 ReportDetails:
-    report_details_type=ReportDetailsType name=ID '{'
+    parameter_type=ParameterType name=ID '{'
         // mandatory fields for each report detail
         'topic' ':' topic=STRING
         'creator' ':' creator=STRING
@@ -25,7 +25,7 @@ ReportDetails:
 
 ;
 
-ReportDetailsType:
+ParameterType:
     'general' | 'tabular' | 'graphical' 
 ;
 

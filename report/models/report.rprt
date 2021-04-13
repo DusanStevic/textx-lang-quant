@@ -1,0 +1,27 @@
+report YahooFinance {
+
+
+
+    tabular tab1 {
+        topic: "tabular part of report"
+        creator: "Dazzle Novak"
+        creation_date: true
+        border: true
+        float: 14.23
+        int: 11
+        id: a1b2
+
+    }
+
+    graphical graph1 {
+        topic: "graphical part of report"
+        creator: "Rad Cunningham"
+        creation_date: true
+        summary: "this is graphical part"
+        // 
+        time_series: "Adj Close"
+
+    }
+
+
+}
