@@ -8,9 +8,10 @@
 
 <body>
     {% block content %}
-    <h2>{{topic}}</h2>
-
-    <p>{{topic}} over time.</p>
+	<h1>Topic:{{ topic }}</h1>
+    <h2>Ticker:{{ticker}}</h2>
+	<h2>Time series column of interest:{{time_series_column}}</h2>
+	<h2>Currency in:{{currency}}</h2>
     <div>
 	    <canvas id="line-chart" class="chartsjs" width="3" height="1" style="display:block; width:800, height:450"></canvas>
 	</div>
@@ -23,7 +24,7 @@
 		"type":"line",
 		"data":
 			{"labels":labels,
-			"datasets":[{"label":"Closing price Over Time",
+			"datasets":[{"label":"Ticker time series",
 			"data":	data,
 			"fill":true,
 			"borderColor":"rgb(75, 192, 192)",

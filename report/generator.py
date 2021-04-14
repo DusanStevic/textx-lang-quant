@@ -12,6 +12,7 @@ import os
 os.environ["PATH"] += os.pathsep + 'C:/Program Files/wkhtmltopdf/bin'
 from textx import metamodel_from_file
 from textx.export import metamodel_export, model_export
+import datetime
 
 try:
     # Connect to an existing dsl database
@@ -42,8 +43,9 @@ try:
     # Use the pandas read_sql_query function to read 
     # the results of a SQL query directly into a pandas DataFrame
     df = pd.read_sql_query("SELECT * FROM stocks", connection)
+    # Get stock market ticker from pandas DataFrame
+    ticker = df['Ticker'][0]
         
-
 except (Exception, Error) as error:
     print("Error while connecting to PostgreSQL", error)
 finally:
@@ -70,19 +72,37 @@ jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(templates_folder),
 # Generate report.html file
 with open(join(srcgen_folder, "report.html"), 'w') as f:
     for details in report_model.report.details:
-        if(details.report_details_type == "tabular"):
+        if(details.report_details_type == "general"):
+            now = "Creation date not provided"
+            if(details.creation_date == True):
+                now = datetime.datetime.now().strftime("%A, %B %d, %Y %X")
+            
+            topic = details.topic
+            creator = details.creator
+            
+            # Load general template
+            template = jinja_env.get_template('GeneralDetails.j2')
+            f.write(template.render(topic=topic, now=now, creator=creator))
+        elif(details.report_details_type == "tabular"):
             # Load tabular template
+            border = "0"
+            if(details.fields[0].value == True):
+                border = "1"
+            topic = details.topic              
             template = jinja_env.get_template('TabularDetails.j2')
-            f.write(template.render(columns=columns,rows=rows))
+            f.write(template.render(topic=topic, border=border, columns=columns, rows=rows))
 
         elif(details.report_details_type == "graphical"):
-            # Load graphical template
-            template = jinja_env.get_template('GraphicalDetails.j2')
-            data = json.dumps(df[details.fields[0].value].tolist())
+            time_series_column = details.fields[0].value
+            currency = details.fields[1].value
+            data = json.dumps(df[time_series_column].tolist())
             #labels=json.dumps( ["18-12-31", "19-01-01", "19-01-02"] )
             labels=json.dumps(df["Date"].tolist())
-            topic = "Yahoo Finance Charts"
-            f.write(template.render(data=data, labels=labels, topic=topic))
+            topic = details.topic
+            # Load graphical template
+            template = jinja_env.get_template('GraphicalDetails.j2')
+            f.write(template.render(data=data, labels=labels,
+             topic=topic, ticker=ticker, time_series_column=time_series_column, currency=currency))
         else:
             print("Minimum one report detail is required. Please add report details and try again.")
 
