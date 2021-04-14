@@ -1,13 +1,5 @@
-<style>
-    table,
-    th,
-    td {
-    padding: 10px;
-    border: 1px solid black;
-    border-collapse: collapse;
-    }
-</style>
-<table>
+<h1>Topic:{{ topic }}</h1>
+<table border={{border}} style="width:100%">
   <tr>
     {% for cell in columns %}
       <td><b>{{ cell }}</b></td>
@@ -21,3 +13,4 @@
     </tr>
   {% endfor %} 
 </table>
+<hr>
