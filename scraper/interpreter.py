@@ -34,7 +34,11 @@ period2 = int(time.mktime(datetime.datetime(period2_year, period2_month, period2
 interval = scraper_model.query.details.interval 
 query_string = f'https://query1.finance.yahoo.com/v7/finance/download/{ticker}?period1={period1}&period2={period2}&interval={interval}&events=history&includeAdjustedClose=true'
 df = pd.read_csv(query_string)
-print(df)
+# Adding ticker column to existing DataFrame in Pandas (providing extra information)
+ticker_column = []
+for item in range(len(df.index)):
+    ticker_column.append(ticker)
+df['Ticker'] = ticker_column
 # PostgreSQL credentials
 # engine = create_engine('postgresql://user:password@localhost/database_name')
 engine = create_engine('postgresql://postgres:root@localhost/dsl')

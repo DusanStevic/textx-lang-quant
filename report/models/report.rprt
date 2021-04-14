@@ -1,9 +1,20 @@
 report YahooFinance {
 
+    general gen1 {
+        topic: "General stock market report details"
+        creator: "Dazzle Novak"
+        creation_date: true
+        border: true
+        float: 14.23
+        int: 11
+        id: a1b2
+
+    }
+
 
 
     tabular tab1 {
-        topic: "tabular part of report"
+        topic: "Tabular stock market report details"
         creator: "Dazzle Novak"
         creation_date: true
         border: true
@@ -14,12 +25,13 @@ report YahooFinance {
     }
 
     graphical graph1 {
-        topic: "graphical part of report"
+        topic: "Graphical stock market report details"
         creator: "Rad Cunningham"
         creation_date: true
         summary: "this is graphical part"
-        // 
+        //Generate time series using Date column and one of the following columns: Open, High, Low, Close, Adj Close, or Volume.
         time_series: "Adj Close"
+        currency: "USD"
 
     }
 
