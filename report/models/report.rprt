@@ -1,37 +1,36 @@
 report YahooFinance {
 
-    general gen1 {
+    general general1 {
         topic: "General stock market report details"
         creator: "Dazzle Novak"
         creation_date: true
-        border: true
+        source: "https://finance.yahoo.com"
         float: 14.23
         int: 11
         id: a1b2
 
     }
 
-
-
-    tabular tab1 {
+    tabular table1 {
         topic: "Tabular stock market report details"
-        creator: "Dazzle Novak"
-        creation_date: true
         border: true
-        float: 14.23
-        int: 11
-        id: a1b2
 
     }
 
     graphical graph1 {
         topic: "Graphical stock market report details"
-        creator: "Rad Cunningham"
-        creation_date: true
-        summary: "this is graphical part"
         //Generate time series using Date column and one of the following columns: Open, High, Low, Close, Adj Close, or Volume.
         time_series: "Adj Close"
         currency: "USD"
+
+    }
+
+    multimedial multimedia1 {
+        topic: "Multimedial stock market report details"
+        summary: "this is graphical part"
+        source: "https://finance.yahoo.com"
+        width: 850 
+        height: 600
 
     }
 

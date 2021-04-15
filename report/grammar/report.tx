@@ -15,9 +15,10 @@ ReportDetails:
     report_details_type=ReportDetailsType name=ID '{'
         // mandatory fields for each report detail
         'topic' ':' topic=STRING
-        'creator' ':' creator=STRING
-        'creation_date' ':' creation_date=BOOL
         // optional fields for each report detail
+        ('creator' ':' creator=STRING)?
+        ('creation_date' ':' creation_date=BOOL)?
+        ('source' ':' source=STRING)?
         ('summary' ':' summary=STRING)?
         // specific fields for each report detail
         fields*=Field
@@ -26,7 +27,7 @@ ReportDetails:
 ;
 
 ReportDetailsType:
-    'general' | 'tabular' | 'graphical' 
+    "general" | "tabular" | "graphical" | "multimedial"
 ;
 
 Field:

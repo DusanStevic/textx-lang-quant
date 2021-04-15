@@ -45,6 +45,10 @@ try:
     df = pd.read_sql_query("SELECT * FROM stocks", connection)
     # Get stock market ticker from pandas DataFrame
     ticker = df['Ticker'][0]
+    # Start of time serie
+    start = df['Date'][0]
+    # End of time serie
+    end = df['Date'][len(df.index)-1]
         
 except (Exception, Error) as error:
     print("Error while connecting to PostgreSQL", error)
@@ -79,10 +83,12 @@ with open(join(srcgen_folder, "report.html"), 'w') as f:
             
             topic = details.topic
             creator = details.creator
+            source = details.source
             
             # Load general template
             template = jinja_env.get_template('GeneralDetails.j2')
-            f.write(template.render(topic=topic, now=now, creator=creator))
+            f.write(template.render(topic=topic, now=now, creator=creator,
+            source=source))
         elif(details.report_details_type == "tabular"):
             # Load tabular template
             border = "0"
@@ -90,19 +96,29 @@ with open(join(srcgen_folder, "report.html"), 'w') as f:
                 border = "1"
             topic = details.topic              
             template = jinja_env.get_template('TabularDetails.j2')
-            f.write(template.render(topic=topic, border=border, columns=columns, rows=rows))
+            f.write(template.render(topic=topic, border=border,
+             columns=columns, rows=rows, ticker=ticker, start=start,
+             end=end))
 
         elif(details.report_details_type == "graphical"):
+            # Generate time series using Date column and one of the following columns: Open, High, Low, Close, Adj Close, or Volume.
             time_series_column = details.fields[0].value
             currency = details.fields[1].value
             data = json.dumps(df[time_series_column].tolist())
-            #labels=json.dumps( ["18-12-31", "19-01-01", "19-01-02"] )
+            # Dates for time series
             labels=json.dumps(df["Date"].tolist())
             topic = details.topic
             # Load graphical template
             template = jinja_env.get_template('GraphicalDetails.j2')
             f.write(template.render(data=data, labels=labels,
              topic=topic, ticker=ticker, time_series_column=time_series_column, currency=currency))
+        elif(details.report_details_type == "multimedial"):
+            topic = details.topic
+            width = details.fields[0].value
+            height = details.fields[1].value
+            # Load general template
+            template = jinja_env.get_template('MultimedialDetails.j2')
+            f.write(template.render(topic=topic, source=source, width=width, height=height))
         else:
             print("Minimum one report detail is required. Please add report details and try again.")
 
