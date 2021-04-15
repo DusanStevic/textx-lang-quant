@@ -1,5 +1,13 @@
-<h1>Topic:{{ topic }}</h1>
-<h2>Creation date:{{ now }}</h2>
-<h2>Creator:{{ creator }}</h2>
-<img src="https://images.unsplash.com/photo-1468254095679-bbcba94a7066?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=749&q=80" alt="wall street">
-<hr>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>General stock market report details</title>
+  </head>
+  <body>
+    <h1>Topic:{{ topic }}</h1>
+    <p>Creation date:<b>{{ now }}</b></p>
+    <p>Creator:<b>{{ creator }}</b></p>
+    <p>Data source link: <a href={{source}}><b>Yahoo Finance</b></a></p>
+    <hr>
+  </body>
+</html>

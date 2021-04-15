@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Multimedial stock market report details</title>
+    <style>
+      .img-container {
+        text-align: center;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Topic:{{ topic }}</h1>
+    <span class="img-container"> <!-- Inline parent element -->
+      <img src="https://res.cloudinary.com/djxkexzcr/image/upload/v1618470548/DSL/bull-and-bear-market_fvac5n.jpg" alt="bull-and-bear-market" width={{width}} height={{height}}>
+    </span>
+    <p style="text-align:right;">Source: <a href={{source}}><b>Yahoo Finance</b></a></p>
+    <hr>
+  </body>
+</html>
