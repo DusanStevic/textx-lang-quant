@@ -1,16 +1,26 @@
-<h1>Topic:{{ topic }}</h1>
-<table border={{border}} style="width:100%">
-  <tr>
-    {% for cell in columns %}
-      <td><b>{{ cell }}</b></td>
-    {% endfor %}
-  </tr>
-  {% for row in rows %}
-    <tr>
-      {% for cell in row %}
-        <td>{{ cell }}</td>
-      {% endfor %}
-    </tr>
-  {% endfor %} 
-</table>
-<hr>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tabular stock market report details</title>
+  </head>
+  <body>
+    <h1>Topic:{{ topic }}</h1>
+    <table border={{border}} style="width:100%">
+      <caption><b>{{ticker}} ticker time series from {{start}} to {{end}}</b></caption>
+      <tr>
+        {% for cell in columns %}
+          <td><b>{{ cell }}</b></td>
+        {% endfor %}
+      </tr>
+      {% for row in rows %}
+        <tr>
+          {% for cell in row %}
+            <td>{{ cell }}</td>
+          {% endfor %}
+        </tr>
+      {% endfor %} 
+    </table>
+    <p style="text-align:right;">Source: <a href={{source}}><b>Yahoo Finance</b></a></p>
+    <hr>
+  </body>
+</html>

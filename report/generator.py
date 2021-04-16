@@ -45,6 +45,10 @@ try:
     df = pd.read_sql_query("SELECT * FROM stocks", connection)
     # Get stock market ticker from pandas DataFrame
     ticker = df['Ticker'][0]
+    # Start of time serie
+    start = df['Date'][0]
+    # End of time serie
+    end = df['Date'][len(df.index)-1]
         
 except (Exception, Error) as error:
     print("Error while connecting to PostgreSQL", error)
@@ -73,36 +77,50 @@ jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(templates_folder),
 with open(join(srcgen_folder, "report.html"), 'w') as f:
     for details in report_model.report.details:
         if(details.report_details_type == "general"):
+            topic = details.topic
+            creator = details.creator
+            source = details.source
             now = "Creation date not provided"
             if(details.creation_date == True):
                 now = datetime.datetime.now().strftime("%A, %B %d, %Y %X")
-            
-            topic = details.topic
-            creator = details.creator
-            
             # Load general template
             template = jinja_env.get_template('GeneralDetails.j2')
-            f.write(template.render(topic=topic, now=now, creator=creator))
+            f.write(template.render(topic=topic, now=now, creator=creator,
+            source=source))
         elif(details.report_details_type == "tabular"):
-            # Load tabular template
+            topic = details.topic
             border = "0"
             if(details.fields[0].value == True):
                 border = "1"
-            topic = details.topic              
+            # Load tabular template              
             template = jinja_env.get_template('TabularDetails.j2')
-            f.write(template.render(topic=topic, border=border, columns=columns, rows=rows))
+            f.write(template.render(topic=topic, border=border,
+             columns=columns, rows=rows, ticker=ticker, start=start,
+             end=end))
 
         elif(details.report_details_type == "graphical"):
-            time_series_column = details.fields[0].value
-            currency = details.fields[1].value
-            data = json.dumps(df[time_series_column].tolist())
-            #labels=json.dumps( ["18-12-31", "19-01-01", "19-01-02"] )
-            labels=json.dumps(df["Date"].tolist())
             topic = details.topic
+            # Dates for time series
+            labels=json.dumps(df["Date"].tolist())
+            # Generate time series using Date column and one of the following columns: Open, High, Low, Close, Adj Close, or Volume.
+            time_series_column = details.fields[0].value
+            data = json.dumps(df[time_series_column].tolist())
+            currency = details.fields[1].value
             # Load graphical template
             template = jinja_env.get_template('GraphicalDetails.j2')
             f.write(template.render(data=data, labels=labels,
              topic=topic, ticker=ticker, time_series_column=time_series_column, currency=currency))
+        elif(details.report_details_type == "pictorial"):
+            topic = details.topic
+            source = details.source
+            picture = details.fields[0].value
+            width = details.fields[1].value
+            height = details.fields[2].value
+            align = details.fields[3].value
+            # Load pictorial template
+            template = jinja_env.get_template('PictorialDetails.j2')
+            f.write(template.render(topic=topic, source=source, picture=picture, 
+            width=width, height=height, align=align))
         else:
             print("Minimum one report detail is required. Please add report details and try again.")
 

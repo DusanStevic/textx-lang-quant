@@ -2,39 +2,43 @@
 <!-- https://medium.com/@crawftv/javascript-jinja-flask-b0ebfdb406b3 -->
 <html>
 
-<head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.0/chart.js"> </script>
-</head>
+	<head>
+		<title>Graphical stock market report details</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.0/chart.js"> </script>
+	</head>
 
-<body>
-    {% block content %}
-	<h1>Topic:{{ topic }}</h1>
-    <h2>Ticker:{{ticker}}</h2>
-	<h2>Time series column of interest:{{time_series_column}}</h2>
-	<h2>Currency in:{{currency}}</h2>
-    <div>
-	    <canvas id="line-chart" class="chartsjs" width="3" height="1" style="display:block; width:800, height:450"></canvas>
-	</div>
+	<body>
+		{% block content %}
+		<h1>Topic:{{ topic }}</h1>
+		<p>Ticker:<b>{{ ticker }}</b></p>
+		<p>Time series column of interest:<b>{{ time_series_column }}</b></p>
+		<p>Currency in:<b>{{ currency }}</b></p>
+		<div>
+			<canvas id="line-chart" class="chartsjs" width="3" height="1" style="display:block; width:800, height:450"></canvas>
+		</div>
 
-    {% block javascript %}
-	<script>
-	labels = JSON.parse({{ labels | tojson }})
-	data = JSON.parse({{ data | tojson }})
-	new Chart(document.getElementById("line-chart"),{
-		"type":"line",
-		"data":
-			{"labels":labels,
-			"datasets":[{"label":"Ticker time series",
-			"data":	data,
-			"fill":true,
-			"borderColor":"rgb(75, 192, 192)",
-			"lineTension":0.1}]},
-		"options":{}});
+		{% block javascript %}
+		<script>
+		labels = JSON.parse({{ labels | tojson }})
+		data = JSON.parse({{ data | tojson }})
+		new Chart(document.getElementById("line-chart"),{
+			"type":"line",
+			"data":
+				{"labels":labels,
+				"datasets":[{"label":"Ticker time series",
+				"data":	data,
+				"fill":true,
+				"borderColor":"rgb(75, 192, 192)",
+				"lineTension":0.1}]},
+			"options":{}});
 
 
-    	</script>
+			</script>
 
-    {% endblock %}
-    {% endblock %}
+		{% endblock %}
+		{% endblock %}
+		<p style="text-align:right;">Source: <a href={{source}}><b>Yahoo Finance</b></a></p>
+		<hr>
 
-</body>
+	</body>
+</html>

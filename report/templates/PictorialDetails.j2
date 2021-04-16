@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Multimedial stock market report details</title>
+    <style>
+      .img-container {
+        text-align: {{align}};
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Topic:{{ topic }}</h1>
+    <span class="img-container"> <!-- Inline parent element -->
+      <img src={{picture}} alt="report picture" width={{width}} height={{height}}>
+    </span>
+    <p style="text-align:right;">Source: <a href={{source}}><b>Investopedia</b></a></p>
+    <hr>
+  </body>
+</html>
