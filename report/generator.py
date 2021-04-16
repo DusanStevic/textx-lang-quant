@@ -121,6 +121,18 @@ with open(join(srcgen_folder, "report.html"), 'w') as f:
             template = jinja_env.get_template('PictorialDetails.j2')
             f.write(template.render(topic=topic, source=source, picture=picture, 
             width=width, height=height, align=align))
+        elif(details.report_details_type == "textual"):
+            topic = details.topic
+            source = details.source
+            text = details.fields[0].value
+            font = details.fields[1].value
+            size = details.fields[2].value
+            color = details.fields[3].value
+            align = details.fields[4].value
+            # Load textual template
+            template = jinja_env.get_template('TextualDetails.j2')
+            f.write(template.render(topic=topic, source=source, text=text, 
+            font=font, size=size, color=color, align=align))
         else:
             print("Minimum one report detail is required. Please add report details and try again.")
 
