@@ -19,6 +19,7 @@ ReportDetails:
         ('creator' ':' creator=STRING)?
         ('creation_date' ':' creation_date=BOOL)?
         ('source' ':' source=STRING)?
+        ('summary' ':' summary=STRING)?
         // specific fields for each report detail
         fields*=Field
     '}'
@@ -26,7 +27,7 @@ ReportDetails:
 ;
 
 ReportDetailsType:
-    "general" | "tabular" | "graphical" | "pictorial" | "textual"
+    "general" | "tabular" | "graphical" | "multimedial"
 ;
 
 Field:

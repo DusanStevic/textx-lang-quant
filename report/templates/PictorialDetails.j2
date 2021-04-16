@@ -4,7 +4,7 @@
     <title>Multimedial stock market report details</title>
     <style>
       .img-container {
-        text-align: center;
+        text-align: {{align}};
         display: block;
       }
     </style>
@@ -12,9 +12,9 @@
   <body>
     <h1>Topic:{{ topic }}</h1>
     <span class="img-container"> <!-- Inline parent element -->
-      <img src="https://res.cloudinary.com/djxkexzcr/image/upload/v1618470548/DSL/bull-and-bear-market_fvac5n.jpg" alt="bull-and-bear-market" width={{width}} height={{height}}>
+      <img src={{picture}} alt="report picture" width={{width}} height={{height}}>
     </span>
-    <p style="text-align:right;">Source: <a href={{source}}><b>Yahoo Finance</b></a></p>
+    <p style="text-align:right;">Source: <a href={{source}}><b>Investopedia</b></a></p>
     <hr>
   </body>
 </html>
