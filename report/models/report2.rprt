@@ -2,11 +2,11 @@ report YahooFinance {
 
     general general1 {
         topic: "General stock market report details"
-        creator: "Dazzle Novak"
+        creator: "Rad Cunningham"
         creation_date: true
         source: "https://finance.yahoo.com"
         logo_source: "https://www.apple.com"
-        logo: "https://res.cloudinary.com/djxkexzcr/image/upload/v1618645330/DSL/logo_dfymyw.png"
+        logo: "https://res.cloudinary.com/djxkexzcr/image/upload/v1618650714/DSL/wall_street_dsw9ok.jpg"
 
     }
 
