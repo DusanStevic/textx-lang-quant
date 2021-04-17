@@ -5,17 +5,21 @@ report YahooFinance {
         creator: "Dazzle Novak"
         creation_date: true
         source: "https://finance.yahoo.com"
+        logo_source: "https://www.apple.com"
+        logo: "https://res.cloudinary.com/djxkexzcr/image/upload/v1618645330/DSL/logo_dfymyw.png"
 
     }
 
     tabular table1 {
         topic: "Tabular stock market report details"
+        source: "https://finance.yahoo.com"
         border: true
 
     }
 
     graphical graph1 {
         topic: "Graphical stock market report details"
+        source: "https://finance.yahoo.com"
         // Generate time series using Date column and one of the following columns: Open, High, Low, Close, Adj Close, or Volume.
         time_series: "Adj Close"
         currency: "USD"

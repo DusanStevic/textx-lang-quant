@@ -8,11 +8,11 @@ from psycopg2 import Error
 import copy
 import pdfkit
 import os
-# Set wkhtmltopdf Path variable
-os.environ["PATH"] += os.pathsep + 'C:/Program Files/wkhtmltopdf/bin'
 from textx import metamodel_from_file
 from textx.export import metamodel_export, model_export
 import datetime
+# Set wkhtmltopdf Path variable
+os.environ["PATH"] += os.pathsep + 'C:/Program Files/wkhtmltopdf/bin'
 
 try:
     # Connect to an existing dsl database
@@ -78,28 +78,32 @@ with open(join(srcgen_folder, "report.html"), 'w') as f:
     for details in report_model.report.details:
         if(details.report_details_type == "general"):
             topic = details.topic
-            creator = details.creator
             source = details.source
+            creator = details.creator
             now = "Creation date not provided"
             if(details.creation_date == True):
                 now = datetime.datetime.now().strftime("%A, %B %d, %Y %X")
+            logo_source = details.fields[0].value
+            logo = details.fields[1].value
             # Load general template
             template = jinja_env.get_template('GeneralDetails.j2')
             f.write(template.render(topic=topic, now=now, creator=creator,
-            source=source))
+            source=source, logo_source=logo_source, logo=logo))
         elif(details.report_details_type == "tabular"):
             topic = details.topic
+            source = details.source
             border = "0"
             if(details.fields[0].value == True):
                 border = "1"
             # Load tabular template              
             template = jinja_env.get_template('TabularDetails.j2')
-            f.write(template.render(topic=topic, border=border,
+            f.write(template.render(topic=topic, source=source, border=border,
              columns=columns, rows=rows, ticker=ticker, start=start,
              end=end))
 
         elif(details.report_details_type == "graphical"):
             topic = details.topic
+            source = details.source
             # Dates for time series
             labels=json.dumps(df["Date"].tolist())
             # Generate time series using Date column and one of the following columns: Open, High, Low, Close, Adj Close, or Volume.
@@ -109,7 +113,8 @@ with open(join(srcgen_folder, "report.html"), 'w') as f:
             # Load graphical template
             template = jinja_env.get_template('GraphicalDetails.j2')
             f.write(template.render(data=data, labels=labels,
-             topic=topic, ticker=ticker, time_series_column=time_series_column, currency=currency))
+             topic=topic, ticker=ticker, time_series_column=time_series_column,
+              source=source, currency=currency))
         elif(details.report_details_type == "pictorial"):
             topic = details.topic
             source = details.source
