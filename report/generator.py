@@ -70,7 +70,7 @@ models_folder = join(this_folder, 'models')
 # Get meta-model from language description
 report_metamodel = metamodel_from_file(join(grammar_folder, 'report.tx'), debug=False)
 # Instantiate model
-report_model = report_metamodel.model_from_file(join(models_folder, 'report.rprt'))
+report_model = report_metamodel.model_from_file(join(models_folder, 'report2.rprt'))
 # Initialize template engine.
 jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(templates_folder),trim_blocks=True,lstrip_blocks=True)
 # Generate report.html file

@@ -10,21 +10,8 @@ report YahooFinance {
 
     }
 
-    tabular table1 {
-        topic: "Tabular stock market report details"
-        source: "https://finance.yahoo.com"
-        border: true
 
-    }
 
-    graphical graph1 {
-        topic: "Graphical stock market report details"
-        source: "https://finance.yahoo.com"
-        // Generate time series using Date column and one of the following columns: Open, High, Low, Close, Adj Close, or Volume.
-        time_series: "Adj Close"
-        currency: "USD"
-
-    }
 
     pictorial picture1 {
         topic: "Pictorial stock market report details"
