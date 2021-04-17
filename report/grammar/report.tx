@@ -19,6 +19,7 @@ ReportDetails:
         ('creator' ':' creator=STRING)?
         ('creation_date' ':' creation_date=BOOL)?
         ('source' ':' source=STRING)?
+        ('source_name' ':' source_name=STRING)?
         // specific fields for each report detail
         fields*=Field
     '}'

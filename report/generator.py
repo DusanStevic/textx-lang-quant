@@ -70,7 +70,7 @@ models_folder = join(this_folder, 'models')
 # Get meta-model from language description
 report_metamodel = metamodel_from_file(join(grammar_folder, 'report.tx'), debug=False)
 # Instantiate model
-report_model = report_metamodel.model_from_file(join(models_folder, 'report.rprt'))
+report_model = report_metamodel.model_from_file(join(models_folder, 'report2.rprt'))
 # Initialize template engine.
 jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(templates_folder),trim_blocks=True,lstrip_blocks=True)
 # Generate report.html file
@@ -79,31 +79,34 @@ with open(join(srcgen_folder, "report.html"), 'w') as f:
         if(details.report_details_type == "general"):
             topic = details.topic
             source = details.source
+            source_name = details.source_name
             creator = details.creator
             now = "Creation date not provided"
             if(details.creation_date == True):
                 now = datetime.datetime.now().strftime("%A, %B %d, %Y %X")
             logo_source = details.fields[0].value
             logo = details.fields[1].value
+            logo_name = details.fields[2].value
             # Load general template
             template = jinja_env.get_template('GeneralDetails.j2')
-            f.write(template.render(topic=topic, now=now, creator=creator,
-            source=source, logo_source=logo_source, logo=logo))
+            f.write(template.render(topic=topic, source=source, source_name=source_name, 
+            now=now, creator=creator, logo_source=logo_source, logo=logo, logo_name=logo_name))
         elif(details.report_details_type == "tabular"):
             topic = details.topic
             source = details.source
+            source_name = details.source_name
             border = "0"
             if(details.fields[0].value == True):
                 border = "1"
             # Load tabular template              
             template = jinja_env.get_template('TabularDetails.j2')
-            f.write(template.render(topic=topic, source=source, border=border,
-             columns=columns, rows=rows, ticker=ticker, start=start,
-             end=end))
+            f.write(template.render(topic=topic, source=source, source_name=source_name,
+            border=border, columns=columns, rows=rows, ticker=ticker, start=start, end=end))
 
         elif(details.report_details_type == "graphical"):
             topic = details.topic
             source = details.source
+            source_name = details.source_name
             # Dates for time series
             labels=json.dumps(df["Date"].tolist())
             # Generate time series using Date column and one of the following columns: Open, High, Low, Close, Adj Close, or Volume.
@@ -112,23 +115,25 @@ with open(join(srcgen_folder, "report.html"), 'w') as f:
             currency = details.fields[1].value
             # Load graphical template
             template = jinja_env.get_template('GraphicalDetails.j2')
-            f.write(template.render(data=data, labels=labels,
-             topic=topic, ticker=ticker, time_series_column=time_series_column,
-              source=source, currency=currency))
+            f.write(template.render(topic=topic, source=source, source_name=source_name, 
+            data=data, labels=labels, ticker=ticker, time_series_column=time_series_column,
+            currency=currency))
         elif(details.report_details_type == "pictorial"):
             topic = details.topic
             source = details.source
+            source_name = details.source_name
             picture = details.fields[0].value
             width = details.fields[1].value
             height = details.fields[2].value
             align = details.fields[3].value
             # Load pictorial template
             template = jinja_env.get_template('PictorialDetails.j2')
-            f.write(template.render(topic=topic, source=source, picture=picture, 
-            width=width, height=height, align=align))
+            f.write(template.render(topic=topic, source=source, source_name=source_name,
+            picture=picture, width=width, height=height, align=align))
         elif(details.report_details_type == "textual"):
             topic = details.topic
             source = details.source
+            source_name = details.source_name
             text = details.fields[0].value
             font = details.fields[1].value
             size = details.fields[2].value
@@ -136,8 +141,8 @@ with open(join(srcgen_folder, "report.html"), 'w') as f:
             align = details.fields[4].value
             # Load textual template
             template = jinja_env.get_template('TextualDetails.j2')
-            f.write(template.render(topic=topic, source=source, text=text, 
-            font=font, size=size, color=color, align=align))
+            f.write(template.render(topic=topic, source=source, source_name=source_name,
+            text=text, font=font, size=size, color=color, align=align))
         else:
             print("Minimum one report detail is required. Please add report details and try again.")
 
