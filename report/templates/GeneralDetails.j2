@@ -4,14 +4,13 @@
     <title>General stock market report details</title>
   </head>
   <body>
-
     <div>
       <img src={{logo}} alt="logo" style="float:right;width:185px;height:185px;">
       <h1>Topic:{{ topic }}</h1>
       <p>Creation date:<b>{{ now }}</b></p>
       <p>Creator:<b>{{ creator }}</b></p>
-      <p>Data source link: <a href={{source}}><b>Yahoo Finance</b></a></p>
-      <p>Logo: <a href={{logo_source}}><b>Apple Inc. (AAPL)</b></a></p>
+      <p>Data source link: <a href={{source}}><b>{{source_name}}</b></a></p>
+      <p>Logo: <a href={{logo_source}}><b>{{logo_name}}</b></a></p>
     </div>
     <br>
     <hr>
