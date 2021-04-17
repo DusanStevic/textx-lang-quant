@@ -5,14 +5,17 @@ report YahooFinance {
         creator: "Dazzle Novak"
         creation_date: true
         source: "https://finance.yahoo.com"
+        source_name: "Yahoo Finance"
         logo_source: "https://www.apple.com"
         logo: "https://res.cloudinary.com/djxkexzcr/image/upload/v1618645330/DSL/logo_dfymyw.png"
+        logo_name: "Apple Inc. (AAPL)"
 
     }
 
     tabular table1 {
         topic: "Tabular stock market report details"
         source: "https://finance.yahoo.com"
+        source_name: "Yahoo Finance"
         border: true
 
     }
@@ -20,6 +23,7 @@ report YahooFinance {
     graphical graph1 {
         topic: "Graphical stock market report details"
         source: "https://finance.yahoo.com"
+        source_name: "Yahoo Finance"
         // Generate time series using Date column and one of the following columns: Open, High, Low, Close, Adj Close, or Volume.
         time_series: "Adj Close"
         currency: "USD"
@@ -29,6 +33,7 @@ report YahooFinance {
     pictorial picture1 {
         topic: "Pictorial stock market report details"
         source: "https://www.investopedia.com"
+        source_name: "Investopedia"
         picture: "https://res.cloudinary.com/djxkexzcr/image/upload/v1618470548/DSL/bull-and-bear-market_fvac5n.jpg"
         width: 850
         height: 600
@@ -39,6 +44,7 @@ report YahooFinance {
     textual text1 {
         topic: "Textual stock market report details"
         source: "https://www.investopedia.com"
+        source_name: "Investopedia"
         text: " Apple Inc (AAPL) closed Wednesday, Jan. 6, at $126.60, down 4.6% so far in 2021. 
                 The stock set its all-time intraday high of $138.79 on Dec. 29 and is down 8.8% from this high.
                 Apple is also in a bull market over the past 52 weeks. It's up 138.2% from its March 23, 2020, low of $53.15. 
