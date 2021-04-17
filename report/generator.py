@@ -8,11 +8,11 @@ from psycopg2 import Error
 import copy
 import pdfkit
 import os
-# Set wkhtmltopdf Path variable
-os.environ["PATH"] += os.pathsep + 'C:/Program Files/wkhtmltopdf/bin'
 from textx import metamodel_from_file
 from textx.export import metamodel_export, model_export
 import datetime
+# Set wkhtmltopdf Path variable
+os.environ["PATH"] += os.pathsep + 'C:/Program Files/wkhtmltopdf/bin'
 
 try:
     # Connect to an existing dsl database
