@@ -1,70 +1,300 @@
-report YahooFinance {
+report AnimalsOfWallStreet {
 
-    general general1 {
-        topic: "General stock market report details"
+    general info {
+        topic: "Animals of Wall Street"
         creator: "Dazzle Novak"
         creation_date: true
         source: "https://finance.yahoo.com"
         source_name: "Yahoo Finance"
-        logo_source: "https://www.apple.com"
-        logo: "https://res.cloudinary.com/djxkexzcr/image/upload/v1618645330/DSL/logo_dfymyw.png"
-        logo_name: "Apple Inc. (AAPL)"
+        logo_source: "https://res.cloudinary.com/djxkexzcr/image/upload/v1618656955/DSL/wall_street_ur8txt.jpg"
+        logo: "https://res.cloudinary.com/djxkexzcr/image/upload/v1618656955/DSL/wall_street_ur8txt.jpg"
+        logo_name: "Animals of Wall Street"
 
     }
 
-    tabular table1 {
-        topic: "Tabular stock market report details"
-        source: "https://finance.yahoo.com"
-        source_name: "Yahoo Finance"
-        border: true
-
-    }
-
-    graphical graph1 {
-        topic: "Graphical stock market report details"
-        source: "https://finance.yahoo.com"
-        source_name: "Yahoo Finance"
-        // Generate time series using Date column and one of the following columns: Open, High, Low, Close, Adj Close, or Volume.
-        time_series: "Adj Close"
-        currency: "USD"
-
-    }
-
-    pictorial picture1 {
-        topic: "Pictorial stock market report details"
-        source: "https://www.investopedia.com"
-        source_name: "Investopedia"
-        picture: "https://res.cloudinary.com/djxkexzcr/image/upload/v1618470548/DSL/bull-and-bear-market_fvac5n.jpg"
+    pictorial MostFrequentlyUsedTradingAnimalsInTheShareMarket {
+        topic: "17 Most Frequently Used Trading Animals in the Share market"
+        source: "https://tradebrains.in/trading-animals-in-the-share-market/"
+        source_name: "Trade Brains"
+        picture: "https://res.cloudinary.com/djxkexzcr/image/upload/v1618744304/DSL/17_most_frequently_used_trading_animals_ttmw5y.png"
         width: 850
-        height: 600
+        height: 850
         // Align picture with one of the following options: center, left, right
         align: "center"
     }
 
-    textual text1 {
-        topic: "Textual stock market report details"
-        source: "https://www.investopedia.com"
-        source_name: "Investopedia"
-        text: " Apple Inc (AAPL) closed Wednesday, Jan. 6, at $126.60, down 4.6% so far in 2021. 
-                The stock set its all-time intraday high of $138.79 on Dec. 29 and is down 8.8% from this high.
-                Apple is also in a bull market over the past 52 weeks. It's up 138.2% from its March 23, 2020, low of $53.15. 
-                The stock has been trading back and forth around its quarterly pivot at $129.97 for each day of January so far.
-                The closes on Dec. 31, 2020, were inputs to my proprietary analytics and resulted in new monthly, quarterly, 
-                semiannual, and annual levels. Each uses the last nine closes in these time horizons. 
-                New weekly levels are calculated after the end of each week. New monthly levels occur after the close of each month. 
-                New quarterly levels occur at the end of each quarter. Semiannual levels are updated at mid-year. 
-                Annual levels are in play all year long.
-                My theory is that nine years of volatility between closes are enough to assume that all possible bullish or bearish 
-                events for the stock are factored in. To capture share price volatility, investors should buy shares on weakness to
-                a value level and reduce holdings on strength to a risky level. A pivot is a value level or risky level that was 
-                violated within its time horizon. Pivots act as magnets that have a high probability of being tested again before their
-                time horizon expires."
+    textual Bulls {
+        topic: "1. Bulls – The Optimistic"
+        source: "https://tradebrains.in/trading-animals-in-the-share-market/"
+        source_name: "Trade Brains"
+        text: "The bulls represent the investors or traders who are optimistic about the future prospects of the 
+        share market. They believe that the market will continue its upward trend. Bulls are the ones who
+        drive the share price of companies higher."
         // The name of a font-family, like "times", "courier", "arial", "verdana", etc.
-        font: "verdana"
-        size: 100
-        color: "red"
+        font: "arial"
+        size: 120
+        color: "Green"
         // Align text with one of the following options: center, left, right, justify
         align: "justify"
     }
+
+    textual Bears {
+        topic: "2. Bears – The Pessimistic"
+        source: "https://tradebrains.in/trading-animals-in-the-share-market/"
+        source_name: "Trade Brains"
+        text: "Bears are the investors or traders who are totally opposite of the bulls. They are convinced that the 
+        market is headed for a fall. Bears are pessimistic about the future aspects of the share market and 
+        believe that the market is going to be in RED. Mostly, bears are the reasons for getting the share 
+        prices lower.Quick note: The bulls and bears are often used to describe the market condition. 
+        A bull market is a scenario when the market appears to be optimistic and climbing new highs. 
+        On the other hand, a bear market describes a market where things are not good and appears 
+        to be a long-term decline."
+        // The name of a font-family, like "times", "courier", "arial", "verdana", etc.
+        font: "arial"
+        size: 120
+        color: "Red"
+        // Align text with one of the following options: center, left, right, justify
+        align: "justify"
+    }
+
+    textual Rabbits {
+        topic: "3. Rabbits"
+        source: "https://tradebrains.in/trading-animals-in-the-share-market/"
+        source_name: "Trade Brains"
+        text: "The term rabbits are used to describe those traders or investors who take a position for a very short 
+        period of time. The trading time of these traders is typically in minutes.
+        These types of traders are scalpers and trying to scalp profits during the day. 
+        They do not want overnight (or long-term) risk and just looking for an opportunity 
+        to make some quick bucks for the market during the day."
+        // The name of a font-family, like "times", "courier", "arial", "verdana", etc.
+        font: "arial"
+        size: 120
+        color: "DarkOrange"
+        // Align text with one of the following options: center, left, right, justify
+        align: "justify"
+    }
+
+    textual Turtles {
+        topic: "4. Turtles"
+        source: "https://tradebrains.in/trading-animals-in-the-share-market/"
+        source_name: "Trade Brains"
+        text: "The turtles are typically those investors who are slow to buy, slow to sell, and trades for 
+        the long-term time frame. They look at the long-term frame and try to make the least possible number of traders. 
+        This kind of investor does not care about the short-term fluctuations and most concerned with long-term returns."
+        // The name of a font-family, like "times", "courier", "arial", "verdana", etc.
+        font: "arial"
+        size: 120
+        color: "Turquoise"
+        // Align text with one of the following options: center, left, right, justify
+        align: "justify"
+    }
+
+    textual Pigs {
+        topic: "5. Pigs"
+        source: "https://tradebrains.in/trading-animals-in-the-share-market/"
+        source_name: "Trade Brains"
+        text: "Bulls make money, bears make money, pigs get slaughtered.
+        These investors or traders are impatient, willing to take high risk, greedy, and emotional. 
+        The Pigs don’t do any kind of analysis and always look out for hot tips 
+        and want to make some quick bucks from the share market. Pigs are the biggest losers in the stock market."
+        // The name of a font-family, like "times", "courier", "arial", "verdana", etc.
+        font: "arial"
+        size: 120
+        color: "CornflowerBlue"
+        // Align text with one of the following options: center, left, right, justify
+        align: "justify"
+    }
+
+    textual Ostrich {
+        topic: "6. Ostrich"
+        source: "https://tradebrains.in/trading-animals-in-the-share-market/"
+        source_name: "Trade Brains"
+        text: "Ostriches are those kinds of investors who bury their heads in the sand 
+        during bad markets hoping that their portfolio won’t get severely affected.
+        These kinds of investors ignore negative news with an expectation that it will 
+        eventually go away and will not impact their investments. Ostrich investors
+        believe that if they do not know how their portfolio is doing,
+        it might somehow survive and come out alright."
+        // The name of a font-family, like "times", "courier", "arial", "verdana", etc.
+        font: "arial"
+        size: 120
+        color: "DimGray"
+        // Align text with one of the following options: center, left, right, justify
+        align: "justify"
+    }
+
+    textual Chickens {
+        topic: "7. Chickens"
+        source: "https://tradebrains.in/trading-animals-in-the-share-market/"
+        source_name: "Trade Brains"
+        text: "Chicken refers to those investors who are fearful of the stock market
+        and hence do not take risks. They stay away from the market risks by sticking 
+        to conservative instruments such as bonds, bank deposits, or government securities."
+        // The name of a font-family, like "times", "courier", "arial", "verdana", etc.
+        font: "arial"
+        size: 120
+        color: "Gold"
+        // Align text with one of the following options: center, left, right, justify
+        align: "justify"
+    }
+
+    textual Sheeps {
+        topic: "8. Sheeps"
+        source: "https://tradebrains.in/trading-animals-in-the-share-market/"
+        source_name: "Trade Brains"
+        text: "Sheep are those kinds of investors who stick to one investing style and do not change according to the market conditions.
+        They are usually the last ones to enter an uptrend and the last one to get out of a downtrend. 
+        The sheep like to be on the side of the majority (herd) and follow a guru. They are not interested to develop 
+        their own investing/trading method."
+        // The name of a font-family, like "times", "courier", "arial", "verdana", etc.
+        font: "arial"
+        size: 120
+        color: "LightSalmon"
+        // Align text with one of the following options: center, left, right, justify
+        align: "justify"
+    }
+
+    textual Dogs {
+        topic: "9. Dogs"
+        source: "https://tradebrains.in/trading-animals-in-the-share-market/"
+        source_name: "Trade Brains"
+        text: "Dogs are those stocks that have been beaten down by the market due to their poor performance. 
+        Many financial analysts look into the dog stocks closely as they expect these stocks to recover in 
+        the upcoming days."
+        // The name of a font-family, like "times", "courier", "arial", "verdana", etc.
+        font: "arial"
+        size: 120
+        color: "Chocolate"
+        // Align text with one of the following options: center, left, right, justify
+        align: "justify"
+    }
+
+    textual Stags {
+        topic: "10. Stags – The Opportunistic"
+        source: "https://tradebrains.in/trading-animals-in-the-share-market/"
+        source_name: "Trade Brains"
+        text: "This kind of investors or traders are not really interested in a bull or bear market. 
+        They just lookout for opportunities. They are neither bullish nor bearish.
+        For example, Stags can be the traders who buy the share of a company during 
+        its initial public offering (IPO) and sell them when the stock is listed and trading commences. 
+        They do stagging with the hope to get listing gains and hence these individuals are called stags."
+        // The name of a font-family, like "times", "courier", "arial", "verdana", etc.
+        font: "arial"
+        size: 120
+        color: "SteelBlue"
+        // Align text with one of the following options: center, left, right, justify
+        align: "justify"
+    }
+
+    textual Wolves {
+        topic: "11. Wolves"
+        source: "https://tradebrains.in/trading-animals-in-the-share-market/"
+        source_name: "Trade Brains"
+        text: "Wolves are powerful investors/traders who use unethical means to make money from the share market. 
+        Mostly, these wolves are involved behind the scams that move the share market when it comes to light.
+        For example- Harshad Mehta can be considered as the wolf of Dalal Street. He was charged with numerous 
+        financial crimes that took place in the Securities Scam of 1992. Similarly, the famous Hollywood movie 
+        ‘The Wolf of Wall Street’  depicted Jordan Belfort, who was convicted on charges of stock fraud in his 
+        penny stock operation and stock market manipulation."
+        // The name of a font-family, like "times", "courier", "arial", "verdana", etc.
+        font: "arial"
+        size: 120
+        color: "Black"
+        // Align text with one of the following options: center, left, right, justify
+        align: "justify"
+    }
+
+    textual Ducks {
+        topic: "12. Lame ducks"
+        source: "https://tradebrains.in/trading-animals-in-the-share-market/"
+        source_name: "Trade Brains"
+        text: "A lame-duck is a type of trade or investor who trades and ends up with a huge loss.
+        Lame ducks have either defaulted on their debts or gone bankrupt due to the inability 
+        to cover trading losses. The phrase can be traced to the early years of commodity trading
+        and the development of the London Stock Exchange during the mid-1700s."
+        // The name of a font-family, like "times", "courier", "arial", "verdana", etc.
+        font: "arial"
+        size: 120
+        color: "Lime"
+        // Align text with one of the following options: center, left, right, justify
+        align: "justify"
+    }
+
+    textual HawkAndDove {
+        topic: "13. Hawk & Dove"
+        source: "https://tradebrains.in/trading-animals-in-the-share-market/"
+        source_name: "Trade Brains"
+        text: "Hawks and doves are terms used to describe the types of policymakers who take critical stances on different economic situations. 
+        It basically suggests the sensitivity of a policymaker is towards an economic situation.  
+        A ‘hawk’ wants a tough stance in an economic situation, whereas a ‘dove’ wants to be easy with it."
+        // The name of a font-family, like "times", "courier", "arial", "verdana", etc.
+        font: "arial"
+        size: 120
+        color: "Magenta"
+        // Align text with one of the following options: center, left, right, justify
+        align: "justify"
+    }
+
+    textual Whales {
+        topic: "14. Whales"
+        source: "https://tradebrains.in/trading-animals-in-the-share-market/"
+        source_name: "Trade Brains"
+        text: "These are the big investors who can move the stock price when they buy or sell in the market. 
+        You can make a lot of money if you trade alongside the right whale."
+        // The name of a font-family, like "times", "courier", "arial", "verdana", etc.
+        font: "arial"
+        size: 120
+        color: "MediumPurple"
+        // Align text with one of the following options: center, left, right, justify
+        align: "justify"
+    }
+
+    textual Sharks {
+        topic: "15. Sharks"
+        source: "https://tradebrains.in/trading-animals-in-the-share-market/"
+        source_name: "Trade Brains"
+        text: "Sharks are those traders who are just concerned about making money. They get into the trades, make money, and exits the share market. 
+        The sharks have very little interest in big complicated methods of making money from the market."
+        // The name of a font-family, like "times", "courier", "arial", "verdana", etc.
+        font: "arial"
+        size: 120
+        color: "Crimson"
+        // Align text with one of the following options: center, left, right, justify
+        align: "justify"
+    }
+
+    textual DeadCat {
+        topic: "16. Dead Cat Bounce"
+        source: "https://tradebrains.in/trading-animals-in-the-share-market/"
+        source_name: "Trade Brains"
+        text: "The dead cat bounce slang is used to refer to a temporary recovery during the bear run. 
+        Either it could mean a temporary upswing of the market in the midst of a bear run or 
+        it could refer to the particular stock behavior. Interestingly, this phrase has been employed 
+        from the explanation that if you throw a dead cat against a wall at a high rate of speed,
+        it will bounce – but it is still dead."
+        // The name of a font-family, like "times", "courier", "arial", "verdana", etc.
+        font: "arial"
+        size: 120
+        color: "Olive"
+        // Align text with one of the following options: center, left, right, justify
+        align: "justify"
+    }
+
+    textual DogsOfTheDow {
+        topic: "17. Dogs of the Dow"
+        source: "https://tradebrains.in/trading-animals-in-the-share-market/"
+        source_name: "Trade Brains"
+        text: "This is a popular investing strategy where the investors select the 10 highest dividend-yielding blue-chip stocks from the Dow Jones Industrial Average (DJIA) every year. 
+        The main reason to follow the Dogs is that it presents a straightforward formula designed to perform roughly in line with the Dow. This concept was originally published by Michael O’Higgins’ in his book, “Beating the Dow,” 
+        in which he also coined the name “Dogs of the Dow.” Similar to this concept, Dogs of the Sensex is used in India."
+        // The name of a font-family, like "times", "courier", "arial", "verdana", etc.
+        font: "arial"
+        size: 120
+        color: "Teal"
+        // Align text with one of the following options: center, left, right, justify
+        align: "justify"
+    }
+
+
 
 }
