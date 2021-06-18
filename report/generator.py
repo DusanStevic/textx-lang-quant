@@ -66,11 +66,12 @@ if not exists(srcgen_folder):
     mkdir(srcgen_folder)
 
 grammar_folder = join(this_folder, 'grammar')
-models_folder = join(this_folder, 'models')
+# Examples folder contains reporter models with file extension .rprt
+examples_folder = join(this_folder, 'examples')
 # Get meta-model from language description
 report_metamodel = metamodel_from_file(join(grammar_folder, 'report.tx'), debug=False)
 # Instantiate model
-report_model = report_metamodel.model_from_file(join(models_folder, 'report2.rprt'))
+report_model = report_metamodel.model_from_file(join(examples_folder, 'report.rprt'))
 # Initialize template engine.
 jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(templates_folder),trim_blocks=True,lstrip_blocks=True)
 # Generate report.html file
