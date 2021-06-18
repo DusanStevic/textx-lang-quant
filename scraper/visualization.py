@@ -10,7 +10,7 @@ def main(debug=False):
 
     this_folder = dirname(__file__)
     grammar_folder = join(this_folder, 'grammar')
-    models_folder = join(this_folder, 'models')
+    examples_folder = join(this_folder, 'examples')
     # Export to .dot file for visualization
     dot_folder = join(this_folder, 'dotexport')
     if not os.path.exists(dot_folder):
@@ -30,7 +30,7 @@ def main(debug=False):
     graph.write_pdf(join(dot_folder, 'scraper_metamodel.pdf'))
 
     # Instantiate model
-    scraper_model = scraper_metamodel.model_from_file(join(models_folder, 'query.scrp'))
+    scraper_model = scraper_metamodel.model_from_file(join(examples_folder, 'query.scrp'))
 
     # Optionally export model to dot
     model_export(scraper_model, join(dot_folder, 'scraper_model.dot'))
