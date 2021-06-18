@@ -11,25 +11,25 @@
     edge[dir=black,arrowtail=empty]
 
 
-52188504[ label="{Report|}"]
+52206520[ label="{Report|}"]
 
-52180008[ label="{ReportContent|name: ID\l}"]
+52198024[ label="{ReportContent|name: ID\l}"]
 
-52171512[ label="{ReportDetails|report_details_type: ReportDetailsType\lname: ID\ltopic: STRING\lcreator: STRING\lcreation_date: BOOL\lsummary: STRING\l}"]
+52189528[ label="{ReportDetails|report_details_type: ReportDetailsType\lname: ID\ltopic: STRING\lcreator: STRING\lcreation_date: BOOL\lsource: STRING\lsource_name: STRING\l}"]
 
-52197944[ label="{Field|field: ID\lvalue: BASETYPE\l}"]
+52218792[ label="{Field|field: ID\lvalue: BASETYPE\l}"]
 
 
 
-52188504 -> 52180008[arrowtail=diamond, dir=both, headlabel="report "]
-52180008 -> 52171512[arrowtail=diamond, dir=both, headlabel="details 1..*"]
-52171512 -> 52197944[arrowtail=diamond, dir=both, headlabel="fields 0..*"]
+52206520 -> 52198024[arrowtail=diamond, dir=both, headlabel="report "]
+52198024 -> 52189528[arrowtail=diamond, dir=both, headlabel="details 1..*"]
+52189528 -> 52218792[arrowtail=diamond, dir=both, headlabel="fields 0..*"]
 match_rules [ shape=plaintext, label=< <table>
 	<tr>
 		<td><b>Comment</b></td><td>\/\/.*$</td>
 	</tr>
 	<tr>
-		<td><b>ReportDetailsType</b></td><td>general|tabular|graphical</td>
+		<td><b>ReportDetailsType</b></td><td>general|tabular|graphical|pictorial|textual</td>
 	</tr>
 </table> >]
 
