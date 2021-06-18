@@ -131,6 +131,6 @@ dmypy.json
 # srcgen folder
 report/srcgen/
 
-# srcgen dotexport
+# dotexport folder
 report/dotexport/
 scraper/dotexport/
