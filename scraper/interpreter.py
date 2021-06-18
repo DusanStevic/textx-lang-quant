@@ -8,11 +8,12 @@ from textx.export import metamodel_export, model_export
 
 this_folder = dirname(__file__)
 grammar_folder = join(this_folder, 'grammar')
-models_folder = join(this_folder, 'models')
+# Examples folder contains scraper models with file extension .scrp
+examples_folder = join(this_folder, 'examples')
 # Get meta-model from language description
 scraper_metamodel = metamodel_from_file(join(grammar_folder, 'scraper.tx'), debug=False)
 # Instantiate model
-scraper_model = scraper_metamodel.model_from_file(join(models_folder, 'query.scrp'))
+scraper_model = scraper_metamodel.model_from_file(join(examples_folder, 'query.scrp'))
 
 # get ticker symbol from scraper model
 ticker = scraper_model.query.details.ticker.symbol
