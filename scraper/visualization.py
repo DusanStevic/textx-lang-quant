@@ -30,7 +30,7 @@ def main(debug=False):
     graph.write_pdf(join(dot_folder, 'scraper_metamodel.pdf'))
 
     # Instantiate model
-    scraper_model = scraper_metamodel.model_from_file(join(examples_folder, 'query.scrp'))
+    scraper_model = scraper_metamodel.model_from_file(join(examples_folder, 'scraper.scrp'))
 
     # Optionally export model to dot
     model_export(scraper_model, join(dot_folder, 'scraper_model.dot'))
