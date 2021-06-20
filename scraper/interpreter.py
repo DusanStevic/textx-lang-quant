@@ -13,7 +13,7 @@ examples_folder = join(this_folder, 'examples')
 # Get meta-model from language description
 scraper_metamodel = metamodel_from_file(join(grammar_folder, 'scraper.tx'), debug=False)
 # Instantiate model
-scraper_model = scraper_metamodel.model_from_file(join(examples_folder, 'query.scrp'))
+scraper_model = scraper_metamodel.model_from_file(join(examples_folder, 'scraper.scrp'))
 
 # get ticker symbol from scraper model
 ticker = scraper_model.query.details.ticker.symbol

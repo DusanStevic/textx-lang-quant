@@ -1,4 +1,4 @@
-query YahooFinance {
+scraper YahooFinance {
 
     ticker: AAPL
     interval: 1d

@@ -2,12 +2,12 @@
   Scraper DSL grammar.
 */
 
-Query:
+Scraper:
     query=QueryContent
 ;
 
 QueryContent:
-    'query' name=ID '{'
+    'scraper' name=ID '{'
         details=QueryDetails
     '}'
 ;
