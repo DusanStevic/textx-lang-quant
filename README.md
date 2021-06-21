@@ -1,4 +1,4 @@
-# DSL
+# Quant DSL 
 Domain-Specific Language (DSL) for financial time series
 # Domain
 1.***Horizontal DSL***
