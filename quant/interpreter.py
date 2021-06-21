@@ -7,9 +7,9 @@ from os.path import join, dirname
 from textx import metamodel_from_file
 
 this_folder = dirname(__file__)
-grammar_folder = join(this_folder, 'grammar')
+grammars_folder = join(this_folder, 'grammars')
 # Get meta-model from language description
-scraper_metamodel = metamodel_from_file(join(grammar_folder, 'scraper.tx'), debug=False)
+scraper_metamodel = metamodel_from_file(join(grammars_folder, 'scraper.tx'), debug=False)
 # Instantiate model. Examples folder contains scraper models with file extension .scrp
 scraper_model = scraper_metamodel.model_from_file(sys.argv[1])
 # get ticker symbol from scraper model

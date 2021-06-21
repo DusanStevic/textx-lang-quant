@@ -10,7 +10,7 @@ os.environ["PATH"] += os.pathsep + 'C:/Program Files/Graphviz/bin'
 def main(debug=False):
 
     this_folder = dirname(__file__)
-    grammar_folder = join(this_folder, 'grammar')
+    grammars_folder = join(this_folder, 'grammars')
     # Export to .dot file for visualization
     dot_folder = join(this_folder, 'dotexport')
     if not os.path.exists(dot_folder):
@@ -27,9 +27,9 @@ def main(debug=False):
 
     # Get meta-model from language description
     if(file_extension=='scrp'):
-        metamodel = metamodel_from_file(join(grammar_folder, 'scraper.tx'), debug=debug)
+        metamodel = metamodel_from_file(join(grammars_folder, 'scraper.tx'), debug=debug)
     else:
-        metamodel = metamodel_from_file(join(grammar_folder, 'report.tx'), debug=debug)
+        metamodel = metamodel_from_file(join(grammars_folder, 'reporter.tx'), debug=debug)
     
     # Optionally export meta-model to dot
     metamodel_export(metamodel, join(dot_folder, f'{file_name}_metamodel.dot'))

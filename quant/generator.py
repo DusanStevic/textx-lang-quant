@@ -67,9 +67,9 @@ def generate():
     if not exists(srcgen_folder):
         mkdir(srcgen_folder)
 
-    grammar_folder = join(this_folder, 'grammar')
+    grammars_folder = join(this_folder, 'grammars')
     # Get meta-model from language description
-    report_metamodel = metamodel_from_file(join(grammar_folder, 'report.tx'), debug=False)
+    report_metamodel = metamodel_from_file(join(grammars_folder, 'reporter.tx'), debug=False)
     # Instantiate model. Examples folder contains reporter models with file extension .rprt
     report_model = report_metamodel.model_from_file('C:\\Users\\Dule\\Desktop\\JSD\\textx-lang-quant\\examples\\report.rprt')
     #report_model = report_metamodel.model_from_file(sys.argv[1])

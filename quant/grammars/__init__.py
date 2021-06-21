@@ -11,7 +11,7 @@ def scraper_language():
 @language("reporter", "*.rprt")
 def reporter_language():
     "A language for visualizing financial time-series"
-    return metamodel_from_file(join(dirname(__file__), "report.tx"))
+    return metamodel_from_file(join(dirname(__file__), "reporter.tx"))
 
 @gen('reporter', 'html+pdf')
 def reporter_generate_html(metamodel, model, output_path, overwrite, debug):
