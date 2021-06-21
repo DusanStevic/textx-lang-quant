@@ -21,8 +21,11 @@ https://finance.yahoo.com
 ## Prerequisites
 - [Python 3.7+](https://www.python.org/downloads/)
 - [textX](https://github.com/textX/textX)
+- [Graphviz](http://graphviz.org)
+- [wkhtmltopdf](https://wkhtmltopdf.org/downloads.html)
 - Jinja2 template engine
 - PostgreSQL
+- [Chart.js](https://www.chartjs.org)
 
 ## Contributors
 - [Dušan Stević](https://github.com/DusanStevic)
