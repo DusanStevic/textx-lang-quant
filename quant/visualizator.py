@@ -7,7 +7,7 @@ from textx.export import metamodel_export, model_export
 # Set GraphViz Path variable
 os.environ["PATH"] += os.pathsep + 'C:/Program Files/Graphviz/bin'
 
-def main(debug=False):
+def main(model,debug=False):
 
     this_folder = dirname(__file__)
     grammars_folder = join(this_folder, 'grammars')
@@ -17,7 +17,7 @@ def main(debug=False):
         os.mkdir(dot_folder)
 
     # Command line arguments
-    file_path = sys.argv[1]
+    file_path = model
     # Extract a file from a path.
     extracted_file = os.path.split(file_path)[1]
     # Split extracted file to file name and file extension
@@ -56,4 +56,4 @@ def main(debug=False):
 
 
 if __name__ == '__main__':
-    main()
+    main(model=sys.argv[1])

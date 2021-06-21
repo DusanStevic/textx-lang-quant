@@ -15,7 +15,7 @@ import datetime
 os.environ["PATH"] += os.pathsep + 'C:/Program Files/wkhtmltopdf/bin'
 
 
-def generate():
+def generate(model):
     try:
         # Connect to an existing dsl database
         connection = psycopg2.connect(dbname="dsl", user="postgres", password="root")
@@ -71,8 +71,7 @@ def generate():
     # Get meta-model from language description
     report_metamodel = metamodel_from_file(join(grammars_folder, 'reporter.tx'), debug=False)
     # Instantiate model. Examples folder contains reporter models with file extension .rprt
-    report_model = report_metamodel.model_from_file('C:\\Users\\Dule\\Desktop\\JSD\\textx-lang-quant\\examples\\report.rprt')
-    #report_model = report_metamodel.model_from_file(sys.argv[1])
+    report_model = report_metamodel.model_from_file(model)
     # Initialize template engine.
     jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader(templates_folder),trim_blocks=True,lstrip_blocks=True)
     # Generate report.html file
@@ -151,5 +150,3 @@ def generate():
     # Generate report.pdf file from report.html file (wkhtmltopdf utility to convert HTML to PDF using Webkit)
     pdfkit.from_file(join(srcgen_folder, "report.html"), join(srcgen_folder, "report.pdf"))
 
-if __name__ == "__main__":    
-    generate()

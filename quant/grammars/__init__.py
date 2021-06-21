@@ -17,5 +17,4 @@ def reporter_language():
 def reporter_generate_html(metamodel, model, output_path, overwrite, debug):
     "Generate stock market reports in pdf and html format from the rprt file"
     input_file = model._tx_filename
-    outuput_dir = output_path if output_path else dirname(input_file)
-    generate()
+    generate(input_file)
