@@ -24,7 +24,8 @@ https://finance.yahoo.com
 - [Graphviz](http://graphviz.org)
 - [wkhtmltopdf](https://wkhtmltopdf.org/downloads.html)
 - Jinja2 template engine
-- PostgreSQL
+- PostgreSQL(https://www.postgresql.org)
+- [pgAdmin](https://www.pgadmin.org)
 - [Chart.js](https://www.chartjs.org)
 
 ## Contributors
