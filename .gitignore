@@ -129,8 +129,7 @@ dmypy.json
 .pyre/
 
 # srcgen folder
-report/srcgen/
+quant/srcgen/
 
 # dotexport folder
-report/dotexport/
-scraper/dotexport/
+quant/dotexport/

@@ -1,20 +1,17 @@
+import sys
 import time
 import datetime
 import pandas as pd
 from sqlalchemy import create_engine
 from os.path import join, dirname
 from textx import metamodel_from_file
-from textx.export import metamodel_export, model_export
 
 this_folder = dirname(__file__)
 grammar_folder = join(this_folder, 'grammar')
-# Examples folder contains scraper models with file extension .scrp
-examples_folder = join(this_folder, 'examples')
 # Get meta-model from language description
 scraper_metamodel = metamodel_from_file(join(grammar_folder, 'scraper.tx'), debug=False)
-# Instantiate model
-scraper_model = scraper_metamodel.model_from_file(join(examples_folder, 'scraper.scrp'))
-
+# Instantiate model. Examples folder contains scraper models with file extension .scrp
+scraper_model = scraper_metamodel.model_from_file(sys.argv[1])
 # get ticker symbol from scraper model
 ticker = scraper_model.query.details.ticker.symbol
 
