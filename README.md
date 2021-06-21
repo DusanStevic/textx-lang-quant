@@ -17,6 +17,13 @@ https://finance.yahoo.com
 ![Stock markets reports](https://res.cloudinary.com/djxkexzcr/image/upload/v1611058472/DSL/Stock_markets_reports_s1cfu7.png "Stock markets reports")
 # Project flow
 ![Project flow](https://res.cloudinary.com/djxkexzcr/image/upload/v1611057271/DSL/Project_flow_lr6rtv.png "Project flow")
+
+## Prerequisites
+- [Python 3.7+](https://www.python.org/downloads/)
+- [textX](https://github.com/textX/textX)
+- Jinja2 template engine
+- PostgreSQL
+
 ## Contributors
 - [Dušan Stević](https://github.com/DusanStevic)
 
