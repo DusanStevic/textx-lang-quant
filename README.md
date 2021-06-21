@@ -18,7 +18,7 @@ https://finance.yahoo.com
 # Project flow
 ![Project flow](https://res.cloudinary.com/djxkexzcr/image/upload/v1611057271/DSL/Project_flow_lr6rtv.png "Project flow")
 ## Contributors
-
+- [Dušan Stević](https://github.com/DusanStevic)
 
 ## License
 This project is licensed under the terms of the MIT license.
