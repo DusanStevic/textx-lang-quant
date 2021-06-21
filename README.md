@@ -1,4 +1,6 @@
 # Quant DSL 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
+
 Domain-Specific Language (DSL) for financial time series
 # Domain
 1.***Horizontal DSL***
