@@ -44,8 +44,89 @@ Contains generated financial reports in HTML and PDF format.
 Contains models and meta-models visualizations.
 
 ## Examples
-### Scraper sublanguage example
-### Reporter sublanguage example
+### Scraper sublanguage example (scraper.scrp)
+```
+scraper YahooFinance {
+    ticker: AAPL
+    interval: 1d
+    start: 2020.12.01
+    end: 2020.12.31
+}
+```
+### Reporter sublanguage example (report.rprt)
+```
+report YahooFinance {
+
+    general general1 {
+        topic: "General stock market report details"
+        creator: "Dazzle Novak"
+        creation_date: true
+        source: "https://finance.yahoo.com"
+        source_name: "Yahoo Finance"
+        logo_source: "https://www.apple.com"
+        logo: "https://res.cloudinary.com/djxkexzcr/image/upload/v1618645330/DSL/logo_dfymyw.png"
+        logo_name: "Apple Inc. (AAPL)"
+
+    }
+
+    tabular table1 {
+        topic: "Tabular stock market report details"
+        source: "https://finance.yahoo.com"
+        source_name: "Yahoo Finance"
+        border: true
+
+    }
+
+    graphical graph1 {
+        topic: "Graphical stock market report details"
+        source: "https://finance.yahoo.com"
+        source_name: "Yahoo Finance"
+        // Generate time series using Date column and one of the following columns: Open, High, Low, Close, Adj Close, or Volume.
+        time_series: "Adj Close"
+        currency: "USD"
+
+    }
+
+    pictorial picture1 {
+        topic: "Pictorial stock market report details"
+        source: "https://www.investopedia.com"
+        source_name: "Investopedia"
+        picture: "https://res.cloudinary.com/djxkexzcr/image/upload/v1618470548/DSL/bull-and-bear-market_fvac5n.jpg"
+        width: 850
+        height: 600
+        // Align picture with one of the following options: center, left, right
+        align: "center"
+    }
+
+    textual text1 {
+        topic: "Textual stock market report details"
+        source: "https://www.investopedia.com"
+        source_name: "Investopedia"
+        text: " Apple Inc (AAPL) closed Wednesday, Jan. 6, at $126.60, down 4.6% so far in 2021. 
+                The stock set its all-time intraday high of $138.79 on Dec. 29 and is down 8.8% from this high.
+                Apple is also in a bull market over the past 52 weeks. It's up 138.2% from its March 23, 2020, low of $53.15. 
+                The stock has been trading back and forth around its quarterly pivot at $129.97 for each day of January so far.
+                The closes on Dec. 31, 2020, were inputs to my proprietary analytics and resulted in new monthly, quarterly, 
+                semiannual, and annual levels. Each uses the last nine closes in these time horizons. 
+                New weekly levels are calculated after the end of each week. New monthly levels occur after the close of each month. 
+                New quarterly levels occur at the end of each quarter. Semiannual levels are updated at mid-year. 
+                Annual levels are in play all year long.
+                My theory is that nine years of volatility between closes are enough to assume that all possible bullish or bearish 
+                events for the stock are factored in. To capture share price volatility, investors should buy shares on weakness to
+                a value level and reduce holdings on strength to a risky level. A pivot is a value level or risky level that was 
+                violated within its time horizon. Pivots act as magnets that have a high probability of being tested again before their
+                time horizon expires."
+        // The name of a font-family, like "times", "courier", "arial", "verdana", etc.
+        font: "verdana"
+        size: 100
+        color: "red"
+        // Align text with one of the following options: center, left, right, justify
+        align: "justify"
+    }
+
+}
+```
+### Generated sublanguage example
 
 ## Prerequisites
 - [Python 3.7+](https://www.python.org/downloads/)
