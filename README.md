@@ -23,7 +23,7 @@ https://finance.yahoo.com
 - [textX](https://github.com/textX/textX)
 - [Graphviz](http://graphviz.org)
 - [wkhtmltopdf](https://wkhtmltopdf.org/downloads.html)
-- [Jinja2 template engine] (https://jinja.palletsprojects.com/en/3.0.x/)
+- [Jinja2 template engine](https://jinja.palletsprojects.com/en/3.0.x/)
 - [PostgreSQL](https://www.postgresql.org)
 - [SQLAlchemy](https://www.sqlalchemy.org)
 - [pgAdmin](https://www.pgadmin.org)
