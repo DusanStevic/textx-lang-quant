@@ -76,6 +76,10 @@ $ textx list-generators
 ![List registered languages and generators](https://res.cloudinary.com/djxkexzcr/image/upload/v1624357391/DSL/generators_and_languages_zpg9ct.png)
 
 ## Usage
+Scrape stock market data from Yahoo Finance API. Save scraped data to PostgreSQL database
+```
+$ python interpreter.py path/to/*.scrp db_name db_user db_password
+```
 
 ## Contributors
 - [Dušan Stević](https://github.com/DusanStevic)
