@@ -20,6 +20,30 @@ Quant language is used as a tool for financial data science. It collects structu
 ![Project flow](https://res.cloudinary.com/djxkexzcr/image/upload/v1624361221/DSL/project_data_flow_hwyv2f.png "Project flow")
 
 ## Project structure
+### grammars
+### examples
+### templates
+Contains Jinja2 templates. Generated report has multiple parts. Every single part in the report represents one Jinja2 template.
+There are several different types of Jinja2 templates:
+
+-[General Jinja2 template for general elements in the report.]()
+
+-Graphical Jinja2 template for graphs in the report.
+
+-Pictorial Jinja2 template for images in the report.
+
+-Tabular Jinja2 template for tables in the report.
+
+-Textual Jinja2 template for text in the report.
+
+### srcgen
+Contains generated financial reports in HTML and PDF format.
+### dotexport
+Contains models and meta-models visualizations.
+
+## Examples
+### Scraper sublanguage example
+### Reporter sublanguage example
 
 ## Prerequisites
 - [Python 3.7+](https://www.python.org/downloads/)
