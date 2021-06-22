@@ -61,14 +61,14 @@ Quant language instructions
 ```
 $ pip install -e textx-lang-quant
 ```
-Check models and meta-models for syntax and semantic validity
+Check models and meta-models for syntax and semantic validity instructions
 ```
 $ textx check scraper.tx
 $ textx check query.scrp --grammar scraper.tx
 $ textx check report.tx
 $ textx check report.rprt --grammar report.tx
 ```
-List registered languages and generators
+List registered languages and generators instructions
 ```
 $ textx list-languages
 $ textx list-generators
