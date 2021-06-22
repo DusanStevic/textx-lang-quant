@@ -12,14 +12,7 @@ This language was created during the Domain-Specific Languages course at the Fac
 Quant language is used as a tool for financial data science. It collects structured stock market data in form of financial time series. Financial time series represent stock price movements during the time. Quant language also provides financial time series visualization. Acquiring and visualizing financial time series is very important for investment decision-makers because these pieces of information have a huge impact on profitability.
 </p>
 
-
-# Data source
-https://finance.yahoo.com
-# Web Scraping Frameworks (Data acquisition modular)
-![Web Scraping Frameworks](https://res.cloudinary.com/djxkexzcr/image/upload/v1611055729/DSL/Web_Scraping_Frameworks_fm0ksp.png "Web Scraping Frameworks")
-![Data acquisition](https://res.cloudinary.com/djxkexzcr/image/upload/v1611058593/DSL/Data_acquisition_taapgm.png "Data acquisition")
-# Stock markets reports (Data visualization boilerplate)
-![Stock markets reports](https://res.cloudinary.com/djxkexzcr/image/upload/v1611058472/DSL/Stock_markets_reports_s1cfu7.png "Stock markets reports")
+## Project specification
 # Project flow
 ![Project flow](https://res.cloudinary.com/djxkexzcr/image/upload/v1624361221/DSL/project_data_flow_hwyv2f.png "Project flow")
 
