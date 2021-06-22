@@ -86,7 +86,8 @@ $ textx generate --target html+pdf path/to/*.rprt
 ```
 Visualize models and meta-models by generating visualizations:
 ```
-$ 
+$ python visualizator.py path/to/*.scrp
+$ python visualizator.py path/to/*.rprt
 ```
 ## Contributors
 - [Dušan Stević](https://github.com/DusanStevic)
