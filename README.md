@@ -13,7 +13,10 @@ Quant language is used as a tool for financial data science. It collects structu
 </p>
 
 ## Project specification
-# Project flow
+<p align="justify">
+    Quant language consists of two sublanguages. The first sublanguage is called Scraper. Scraper is a DSL for acquiring financial time series. Scraper uses Yahoo Finance API to get historical stock market data. After the stock market data has been successfully collected, this data is preserved in the PostgreSQL database. The second sublanguage is called Reporter. Reporter is a DSL for visualizing financial time series. Reporter uses stored financial data to generate financial reports. These reports are generated using Jinja2 templates. Each section in the report represents one Jinja2 template. Reports are saved in HTML and PDF format. Financial reports should provide valuable pieces of information for investors during decision-making.
+</p>
+
 ![Project flow](https://res.cloudinary.com/djxkexzcr/image/upload/v1624361221/DSL/project_data_flow_hwyv2f.png "Project flow")
 
 ## Prerequisites
