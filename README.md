@@ -13,11 +13,6 @@ Quant language is used as a tool for financial data science. It collects structu
 </p>
 
 
-1.***Horizontal DSL***
-
-2.***Vertical DSL***
-
-![Domain](https://res.cloudinary.com/djxkexzcr/image/upload/v1611057773/DSL/Domain_u8syz7.jpg "Domain")
 # Data source
 https://finance.yahoo.com
 # Web Scraping Frameworks (Data acquisition modular)
@@ -38,6 +33,8 @@ https://finance.yahoo.com
 - [SQLAlchemy](https://www.sqlalchemy.org)
 - [pgAdmin](https://www.pgadmin.org)
 - [Chart.js](https://www.chartjs.org)
+
+## Instructions
 
 ## Contributors
 - [Dušan Stević](https://github.com/DusanStevic)
