@@ -35,6 +35,25 @@ https://finance.yahoo.com
 - [Chart.js](https://www.chartjs.org)
 
 ## Instructions
+Install instructions
+```
+Install Python 3.7+
+Install Graphviz
+Install wkhtmltopdf
+Install PostgreSQL
+Install pgAdmin
+```
+pgAdmin and PostgreSQL database instructions
+```
+Open pgAdmin, create PostgreSQL database, and remember database credentials:
+db_name
+db_user
+db_password
+```
+Python environment instructions
+```
+
+```
 
 ## Contributors
 - [Dušan Stević](https://github.com/DusanStevic)
