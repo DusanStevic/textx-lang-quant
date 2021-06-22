@@ -19,6 +19,8 @@ Quant language is used as a tool for financial data science. It collects structu
 
 ![Project flow](https://res.cloudinary.com/djxkexzcr/image/upload/v1624361221/DSL/project_data_flow_hwyv2f.png "Project flow")
 
+## Project structure
+
 ## Prerequisites
 - [Python 3.7+](https://www.python.org/downloads/)
 - [textX](https://github.com/textX/textX)
