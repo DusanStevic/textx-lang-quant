@@ -35,7 +35,7 @@ https://finance.yahoo.com
 - [Chart.js](https://www.chartjs.org)
 
 ## Instructions
-Install instructions
+Install instructions:
 ```
 Install Python 3.7+
 Install Graphviz
@@ -43,32 +43,32 @@ Install wkhtmltopdf
 Install PostgreSQL
 Install pgAdmin
 ```
-pgAdmin and PostgreSQL database instructions
+pgAdmin and PostgreSQL database instructions:
 ```
 Open pgAdmin, create PostgreSQL database, and remember database credentials:
 db_name
 db_user
 db_password
 ```
-Python environment instructions
+Python environment instructions:
 ```
 $ git clone https://github.com/DusanStevic/textx-lang-quant.git
 $ python -m venv env
 $ source env/bin/activate
 $ pip install -r requirements.txt
 ```
-Quant language instructions
+Quant language instructions:
 ```
 $ pip install -e textx-lang-quant
 ```
-Check models and meta-models for syntax and semantic validity instructions
+Check models and meta-models for syntax and semantic validity instructions:
 ```
 $ textx check scraper.tx
 $ textx check query.scrp --grammar scraper.tx
 $ textx check report.tx
 $ textx check report.rprt --grammar report.tx
 ```
-List registered languages and generators instructions
+List registered languages and generators instructions:
 ```
 $ textx list-languages
 $ textx list-generators
@@ -76,11 +76,18 @@ $ textx list-generators
 ![List registered languages and generators](https://res.cloudinary.com/djxkexzcr/image/upload/v1624357391/DSL/generators_and_languages_zpg9ct.png)
 
 ## Usage
-Scrape stock market data from Yahoo Finance API. Save scraped data to PostgreSQL database
+Scrape stock market data from Yahoo Finance API. Save scraped data to PostgreSQL database:
 ```
 $ python interpreter.py path/to/*.scrp db_name db_user db_password
 ```
-
+Call registered generators and transform given models to other target languages. Generate your stock market report:
+```
+$ textx generate --target html+pdf path/to/*.rprt
+```
+Visualize models and meta-models by generating visualizations:
+```
+$ 
+```
 ## Contributors
 - [Dušan Stević](https://github.com/DusanStevic)
 
