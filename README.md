@@ -52,8 +52,29 @@ db_password
 ```
 Python environment instructions
 ```
-
+$ git clone https://github.com/DusanStevic/textx-lang-quant.git
+$ python -m venv env
+$ source env/bin/activate
+$ pip install -r requirements.txt
 ```
+Quant language instructions
+```
+$ pip install -e textx-lang-quant
+```
+Check models and meta-models for syntax and semantic validity
+```
+$ textx check scraper.tx
+$ textx check query.scrp --grammar scraper.tx
+$ textx check report.tx
+$ textx check report.rprt --grammar report.tx
+```
+List registered languages and generators
+```
+$ textx list-languages
+$ textx list-generators
+```
+
+## Usage
 
 ## Contributors
 - [Dušan Stević](https://github.com/DusanStevic)
