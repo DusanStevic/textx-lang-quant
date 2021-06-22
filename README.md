@@ -73,6 +73,7 @@ List registered languages and generators instructions
 $ textx list-languages
 $ textx list-generators
 ```
+![List registered languages and generators](https://res.cloudinary.com/djxkexzcr/image/upload/v1624357391/DSL/generators_and_languages_zpg9ct.png)
 
 ## Usage
 
