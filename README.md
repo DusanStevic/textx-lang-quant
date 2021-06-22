@@ -1,7 +1,10 @@
 # Quant DSL 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 
-Domain-Specific Language (DSL) for financial time series
+## Introduction
+Quant is a domain-specific language (DSL) for acquiring and visualizing financial time-series.
+This language was created during the Domain-Specific Languages course at the Faculty of Technical Sciences, University of Novi Sad.
+
 # Domain
 1.***Horizontal DSL***
 
