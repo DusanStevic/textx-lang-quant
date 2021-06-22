@@ -126,8 +126,9 @@ report YahooFinance {
 
 }
 ```
-### Generated sublanguage example
-
+### Generated financial report example 
+![Report1](https://res.cloudinary.com/djxkexzcr/image/upload/v1624374511/DSL/report1_kfw1iv.jpg "Report1")
+![Report2](https://res.cloudinary.com/djxkexzcr/image/upload/v1624374509/DSL/report2_g5ke9g.jpg "Report2")
 ## Prerequisites
 - [Python 3.7+](https://www.python.org/downloads/)
 - [textX](https://github.com/textX/textX)
