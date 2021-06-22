@@ -21,7 +21,7 @@ https://finance.yahoo.com
 # Stock markets reports (Data visualization boilerplate)
 ![Stock markets reports](https://res.cloudinary.com/djxkexzcr/image/upload/v1611058472/DSL/Stock_markets_reports_s1cfu7.png "Stock markets reports")
 # Project flow
-![Project flow](https://res.cloudinary.com/djxkexzcr/image/upload/v1624360958/DSL/project_data_flow_acaoyj.png "Project flow")
+![Project flow](https://res.cloudinary.com/djxkexzcr/image/upload/v1624361221/DSL/project_data_flow_hwyv2f.png "Project flow")
 
 ## Prerequisites
 - [Python 3.7+](https://www.python.org/downloads/)
