@@ -21,20 +21,22 @@ Quant language is used as a tool for financial data science. It collects structu
 
 ## Project structure
 ### grammars
+Contains language description. We get meta-model from language description. Language descriptions are used to derive meta-models.
 ### examples
+Contains models. Meta-models are used to instantiate models.
 ### templates
 Contains Jinja2 templates. Generated report has multiple parts. Every single part in the report represents one Jinja2 template.
 There are several different types of Jinja2 templates:
 
--[General Jinja2 template for general elements in the report.]()
+- General Jinja2 template for general elements in the report.
 
--Graphical Jinja2 template for graphs in the report.
+- Graphical Jinja2 template for graphs in the report.
 
--Pictorial Jinja2 template for images in the report.
+- Pictorial Jinja2 template for images in the report.
 
--Tabular Jinja2 template for tables in the report.
+- Tabular Jinja2 template for tables in the report.
 
--Textual Jinja2 template for text in the report.
+- Textual Jinja2 template for text in the report.
 
 ### srcgen
 Contains generated financial reports in HTML and PDF format.
