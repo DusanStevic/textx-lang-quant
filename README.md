@@ -3,6 +3,7 @@
 
 ## Introduction
 Quant is a domain-specific language (DSL) for acquiring and visualizing financial time-series.
+
 This language was created during the Domain-Specific Languages course at the Faculty of Technical Sciences, University of Novi Sad.
 
 # Domain
