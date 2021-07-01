@@ -1,11 +1,14 @@
 import sys
+from sys import platform
 import os
 import pydot
 from os.path import dirname, join
 from textx import metamodel_from_file
 from textx.export import metamodel_export, model_export
-# Set GraphViz Path variable
-os.environ["PATH"] += os.pathsep + 'C:/Program Files/Graphviz/bin'
+
+if platform == "win32":
+    # Set GraphViz Path variable
+    os.environ["PATH"] += os.pathsep + 'C:/Program Files/Graphviz/bin'
 
 def main(model,debug=False):
 
